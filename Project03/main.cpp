@@ -11,6 +11,7 @@
 #include <new>
 #include <cstddef>
 #include "stack.h"
+#include <string>
 
 using namespace std;
 
