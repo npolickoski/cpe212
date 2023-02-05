@@ -18,7 +18,6 @@ Club::Club(int v) : BlackCard::BlackCard(v)
 
 string Club::Description() const   
 // Outputs card characteristics - value as a string
-// DO NOT MODIFY THIS METHOD !!!!
 {
   string d = BlackCard::Description();
   d += ", Suit = C";    // full description
