@@ -21,7 +21,6 @@ string Diamond::Description() const
 // DO NOT MODIFY THIS METHOD !!!!
 {
   string d = RedCard::Description();
-
   d += ", Suit = D";        // full description
 
   return d;                 // Return string describing card value

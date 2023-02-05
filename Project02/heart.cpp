@@ -21,7 +21,6 @@ string Heart::Description() const
 // DO NOT MODIFY THIS METHOD !!!!
 {
   string d = RedCard::Description();
-
   d += ", Suit = H";      // full description
 
   return d;                 // Return string describing card value

@@ -21,7 +21,6 @@ string Spade::Description() const
 // DO NOT MODIFY THIS METHOD !!!!
 {
   string d = BlackCard::Description();
-
   d += ", Suit = S";    // full description
 
   return d;                 // Return string describing card value

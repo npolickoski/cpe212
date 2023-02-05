@@ -21,7 +21,6 @@ class BlackCard : public Card
   string Description() const override;   // Outputs card characteristics - value and color as a string
 	                            // Hint: use base class Description method to generate part of 
 	                            // the description and append the color information at the end
-	
 };
 
 #endif

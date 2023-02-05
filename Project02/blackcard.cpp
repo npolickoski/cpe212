@@ -21,7 +21,6 @@ string BlackCard::Description() const
 // DO NOT MODIFY THIS METHOD !!!!
 {
   string d = Card::Description();
-
   d += ", Color = black";                 // full description
 
   return d;                 // Return string describing card value
