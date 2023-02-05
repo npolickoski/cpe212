@@ -1,0 +1,117 @@
+# p01input5.txt -- Test of Rotate Counter Clockwise
+
+
+# Draw Bars
+b
+
+
+# Load Image1
+i  p01image1.txt
+
+# Print Image1
+p
+
+# Rotate Counter Clockwise 90 Degrees Image1
+-
+
+# Print Rotated Image1
+p
+
+# Rotate Counter Clockwise 90 Degrees Image1
+-
+
+# Print Rotated Image1
+p
+
+# Rotate Counter Clockwise 90 Degrees Image1
+-
+
+# Print Rotated Image1
+p
+
+# Rotate Counter Clockwise 90 Degrees Image1
+-
+
+# Print Rotated Image1
+p
+
+
+# Draw Bars
+b
+
+
+# Load Image2
+i  p01image2.txt
+
+# Print Image2
+p
+
+# Rotate Counter Clockwise 90 Degrees Image2
+-
+
+# Print Rotated Image2
+p
+
+# Rotate Counter Clockwise 90 Degrees Image2
+-
+
+# Print Rotated Image2
+p
+
+# Rotate Counter Clockwise 90 Degrees Image2
+-
+
+# Print Rotated Image2
+p
+
+# Rotate Counter Clockwise 90 Degrees Image2
+-
+
+# Print Rotated Image2
+p
+
+
+# Draw Bars
+b
+
+
+# Load Image3
+i  p01image3.txt
+
+# Print Image3
+p
+
+# Rotate Counter Clockwise 90 Degrees Image3
+-
+
+# Print Rotated Image3
+p
+
+# Rotate Counter Clockwise 90 Degrees Image3
+-
+
+# Print Rotated Image3
+p
+
+# Rotate Counter Clockwise 90 Degrees Image3
+-
+
+# Print Rotated Image3
+p
+
+# Rotate Counter Clockwise 90 Degrees Image3
+-
+
+# Print Rotated Image3
+p
+
+
+# Draw Bars
+b
+
+
+
+
+
+
+

@@ -1,0 +1,74 @@
+# p01input2.txt -- Test of Horizontal Flip
+
+# Draw Bars
+b
+
+
+# Load Image1
+i  p01image1.txt
+
+# Print Image1
+p
+
+# Horizontal Flip Image1
+h
+
+# Print Flipped Image1
+p
+
+# Horizontal Flip Image1
+h
+
+# Print Flipped Image1
+p
+
+
+# Draw Bars
+b
+
+
+# Load Image2
+i  p01image2.txt
+
+# Print Image2
+p
+
+# Horizontal Flip Image2
+h
+
+# Print Flipped Image2
+p
+
+# Horizontal Flip Image2
+h
+
+# Print Flipped Image2
+p
+
+
+# Draw Bars
+b
+
+# Load Image3
+i  p01image3.txt
+
+# Print Image3
+p
+
+# Horizontal Flip Image3
+h
+
+# Print Flipped Image3
+p
+
+# Horizontal Flip Image3
+h
+
+# Print Flipped Image3
+p
+
+
+# Draw Bars
+b
+
+

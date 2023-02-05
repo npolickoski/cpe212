@@ -1,0 +1,77 @@
+# p01input1.txt -- Test of Transpose Image
+
+# Draw Bars
+b
+
+# Load Image1
+i  p01image1.txt
+
+# Print Image1
+p
+
+# Transpose Image1
+t
+
+# Print Image1
+p
+
+# Transpose Image1
+t
+
+# Print Image1
+p
+
+
+# Draw Bars
+b
+
+
+# Load Image2
+i  p01image2.txt
+
+# Print Image2
+p
+
+# Transpose Image2
+t
+
+# Print Image2
+p
+
+# Transpose Image2
+t
+
+# Print Image2
+p
+
+
+# Draw Bars
+b
+
+
+# Load Image3
+i  p01image3.txt
+
+# Print Image3
+p
+
+# Transpose Image3
+t
+
+# Print Image3
+p
+
+# Transpose Image3
+t
+
+# Print Image3
+p
+
+
+# Draw Bars
+b
+
+
+
+
+

@@ -1,0 +1,68 @@
+# p02input3.txt - Test BlackCard Class
+
+b
+
+# Test of parameterized constructor
++ b 1
+p
+-
+
+b
+
+# Test of parameterized constructor
++ b 2
+p
+-
+
+b
+
+# Test of parameterized constructor
++ b 9
+p
+-
+
+b
+
+# Test of parameterized constructor
++ b 10
+p
+-
+
+b
+
+# Test of parameterized constructor
++ b 11
+p
+-
+
+b
+
+# Test of parameterized constructor
++ b 12
+p
+-
+
+b
+
+# Test of parameterized constructor
++ b 13
+p
+-
+
+b
+
+# Test of parameterized constructor
++ b 14
+p
+-
+
+b
+
+# Test of parameterized constructor
++ b 15
+p
+-
+
+b
+
+

@@ -1,0 +1,141 @@
+# p02input5.txt - Test Club and Spade Classes
+
+b
+
+# Test of Club Class
+
+b
+
+# Test of parameterized constructor
++ c 1
+p
+-
+
+b
+
+# Test of parameterized constructor
++ c 2
+p
+-
+
+b
+
+# Test of parameterized constructor
++ c 9
+p
+-
+
+b
+
+# Test of parameterized constructor
++ c 10
+p
+-
+
+b
+
+# Test of parameterized constructor
++ c 11
+p
+-
+
+b
+
+# Test of parameterized constructor
++ c 12
+p
+-
+
+b
+
+# Test of parameterized constructor
++ c 13
+p
+-
+
+b
+
+# Test of parameterized constructor
++ c 14
+p
+-
+
+b
+
+# Test of parameterized constructor
++ c 15
+p
+-
+
+b
+b
+
+
+# Test of Spade Class
+
+b
+
+# Test of parameterized constructor
++ s 1
+p
+-
+
+b
+
+# Test of parameterized constructor
++ s 2
+p
+-
+
+b
+
+# Test of parameterized constructor
++ s 9
+p
+-
+
+b
+
+# Test of parameterized constructor
++ s 10
+p
+-
+
+b
+
+# Test of parameterized constructor
++ s 11
+p
+-
+
+b
+
+# Test of parameterized constructor
++ s 12
+p
+-
+
+b
+
+# Test of parameterized constructor
++ s 13
+p
+-
+
+b
+
+# Test of parameterized constructor
++ s 14
+p
+-
+
+b
+
+# Test of parameterized constructor
++ s 15
+p
+-
+
+b
+
+

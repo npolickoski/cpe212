@@ -1,0 +1,141 @@
+# p02input4.txt - Test Heart and Diamond Classes
+
+b
+
+# Test of Heart Class
+
+b
+
+# Test of parameterized constructor
++ h 1
+p
+-
+
+b
+
+# Test of parameterized constructor
++ h 2
+p
+-
+
+b
+
+# Test of parameterized constructor
++ h 9
+p
+-
+
+b
+
+# Test of parameterized constructor
++ h 10
+p
+-
+
+b
+
+# Test of parameterized constructor
++ h 11
+p
+-
+
+b
+
+# Test of parameterized constructor
++ h 12
+p
+-
+
+b
+
+# Test of parameterized constructor
++ h 13
+p
+-
+
+b
+
+# Test of parameterized constructor
++ h 14
+p
+-
+
+b
+
+# Test of parameterized constructor
++ h 15
+p
+-
+
+b
+b
+
+
+# Test of Diamond Class
+
+b
+
+# Test of parameterized constructor
++ d 1
+p
+-
+
+b
+
+# Test of parameterized constructor
++ d 2
+p
+-
+
+b
+
+# Test of parameterized constructor
++ d 9
+p
+-
+
+b
+
+# Test of parameterized constructor
++ d 10
+p
+-
+
+b
+
+# Test of parameterized constructor
++ d 11
+p
+-
+
+b
+
+# Test of parameterized constructor
++ d 12
+p
+-
+
+b
+
+# Test of parameterized constructor
++ d 13
+p
+-
+
+b
+
+# Test of parameterized constructor
++ d 14
+p
+-
+
+b
+
+# Test of parameterized constructor
++ d 15
+p
+-
+
+b
+
+

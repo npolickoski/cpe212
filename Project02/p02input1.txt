@@ -1,0 +1,67 @@
+# p02input1.txt - Test Card Class
+
+b
+
+# Test of default constructor
++ z
+p
+-
+
+b
+
+# Test of parameterized constructor
++ x 2
+p
+-
+
+b
+
+# Test of parameterized constructor
++ x 9
+p
+-
+
+b
+
+# Test of parameterized constructor
++ x 10
+p
+-
+
+b
+
+# Test of parameterized constructor
++ x 11
+p
+-
+
+b
+
+# Test of parameterized constructor
++ x 12
+p
+-
+
+b
+
+# Test of parameterized constructor
++ x 13
+p
+-
+
+b
+
+# Test of parameterized constructor
++ x 14
+p
+-
+
+b
+
+# Test of parameterized constructor
++ x 15
+p
+-
+
+b
+

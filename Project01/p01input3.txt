@@ -1,0 +1,74 @@
+# p01input3.txt -- Test of Vertical Flip
+
+# Draw Bars
+b
+
+
+# Load Image1
+i  p01image1.txt
+
+# Print Image1
+p
+
+# Vertical Flip Image1
+v
+
+# Print Flipped Image1
+p
+
+# Vertical Flip Image1
+v
+
+# Print Flipped Image1
+p
+
+
+# Draw Bars
+b
+
+
+# Load Image2
+i  p01image2.txt
+
+# Print Image2
+p
+
+# Vertical Flip Image2
+v
+
+# Print Flipped Image2
+p
+
+# Vertical Flip Image2
+v
+
+# Print Flipped Image2
+p
+
+
+# Draw Bars
+b
+
+
+# Load Image3
+i  p01image3.txt
+
+# Print Image3
+p
+
+# Vertical Flip Image3
+v
+
+# Print Flipped Image3
+p
+
+# Vertical Flip Image3
+v
+
+# Print Flipped Image3
+p
+
+# Draw Bars
+b
+
+

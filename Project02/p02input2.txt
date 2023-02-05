@@ -1,0 +1,67 @@
+# p02input2.txt - Test RedCard Class
+
+b
+
+# Test of parameterized constructor
++ r 1
+p
+-
+
+b
+
+# Test of parameterized constructor
++ r 2
+p
+-
+
+b
+
+# Test of parameterized constructor
++ r 9
+p
+-
+
+b
+
+# Test of parameterized constructor
++ r 10
+p
+-
+
+b
+
+# Test of parameterized constructor
++ r 11
+p
+-
+
+b
+
+# Test of parameterized constructor
++ r 12
+p
+-
+
+b
+
+# Test of parameterized constructor
++ r 13
+p
+-
+
+b
+
+# Test of parameterized constructor
++ r 14
+p
+-
+
+b
+
+# Test of parameterized constructor
++ r 15
+p
+-
+
+b
+
