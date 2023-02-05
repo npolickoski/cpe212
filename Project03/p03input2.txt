@@ -1,0 +1,38 @@
+# p03input2.txt -- Test IsFull(), IsEmpty(), and MakeEmpty()
+
+c 8
+e
+f
++ 5
++ 10
++ 15
++ 20
++ 25
++ 30
+p
+e
+f
+m
+p
+e
+f
++ 35
++ 40
++ 45 
++ 50
+p
+e
+f
+-
+-
+-
+p
+e
+f
+m
+p
+e
+f
+d
+
+

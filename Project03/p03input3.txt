@@ -1,0 +1,58 @@
+# p03input3.txt -- Test Size(), Capacity()
+
+# Test Size()
+c 6
+p
+s
++ 5
++ 10
+p
+s
++ 15
++ 20
+p
+s
++ 25
++ 30
+p
+s
+-
+-
+-
+p
+s
+-
+-
+-
+p
+s
+d
+
+# Test Capacity()
+c 2
+z
++ 5
+z
++ 10
+z
++ 15
+z
++ 20
+z
++ 25
+z
++ 30
+z
+p
+-
+-
+-
+z
+p
+-
+-
+-
+z
+p
+d
+
