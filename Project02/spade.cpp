@@ -18,7 +18,6 @@ Spade::Spade(int v) : BlackCard::BlackCard(v)
 
 string Spade::Description() const   
 // Outputs card characteristics - value as a string
-// DO NOT MODIFY THIS METHOD !!!!
 {
   string d = BlackCard::Description();
   d += ", Suit = S";    // full description
