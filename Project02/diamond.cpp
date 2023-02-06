@@ -18,7 +18,6 @@ Diamond::Diamond(int v) : RedCard::RedCard(v)
 
 string Diamond::Description() const   
 // Outputs card characteristics - value as a string
-// DO NOT MODIFY THIS METHOD !!!!
 {
   string d = RedCard::Description();
   d += ", Suit = D";        // full description

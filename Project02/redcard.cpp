@@ -18,7 +18,6 @@ RedCard::RedCard(int v) : Card::Card(v)
 
 string RedCard::Description() const   
 // Outputs card characteristics - value as a string
-// DO NOT MODIFY THIS METHOD !!!!
 {
  string d = Card::Description();
   d += ", Color = red";      // full description

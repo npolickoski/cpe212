@@ -19,8 +19,8 @@ class Spade : public BlackCard
   Spade(int v);     // Creates a black spade card with value v
 	
   string Description() const override;   // Outputs card characteristics - value, color, suit	
-	                            // Hint: use base class Description method to generate part of 
-	                            // the description and append the suit information at the end
+	                                     // Hint: use base class Description method to generate part of 
+	                                     // the description and append the suit information at the end
 };
 
 #endif

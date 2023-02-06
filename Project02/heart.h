@@ -19,8 +19,8 @@ class Heart : public RedCard
   Heart(int v);    // Creates a red heart card with value v
 	
   string Description() const override;   // Outputs card characteristics - value, color, suit
-	                            // Hint: use base class Description method to generate part of 
-	                            // the description and append the suit information at the end
+	                                     // Hint: use base class Description method to generate part of 
+	                                     // the description and append the suit information at the end
 };
 
 #endif

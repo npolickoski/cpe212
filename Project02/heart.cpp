@@ -18,10 +18,9 @@ Heart::Heart(int v) : RedCard::RedCard(v)
 
 string Heart::Description() const   
 // Outputs card characteristics - value as a string
-// DO NOT MODIFY THIS METHOD !!!!
 {
   string d = RedCard::Description();
-  d += ", Suit = H";      // full description
+  d += ", Suit = H";        // full description
 
   return d;                 // Return string describing card value
 }

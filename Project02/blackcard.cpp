@@ -18,7 +18,6 @@ BlackCard::BlackCard(int v) : Card::Card(v)
 
 string BlackCard::Description() const   
 // Outputs card characteristics - value as a string
-// DO NOT MODIFY THIS METHOD !!!!
 {
   string d = Card::Description();
   d += ", Color = black";                 // full description

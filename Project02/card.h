@@ -22,7 +22,7 @@ class Card                             // Class modeling Card ADT
          //******** Add Constructor Prototypes Below  *********//
          Card();                     // Default constructor prototype: creates card with value v, color unknown, and suit U
              
-         Card(int v);	             // Parameterized constructor prototype: creates card with value v, color unknown, and suit U
+         Card(int v);	            // Parameterized constructor prototype: creates card with value v, color unknown, and suit U
              
              
          //******** Add Transformer Prototypes Below *********//
@@ -41,7 +41,7 @@ class Card                             // Class modeling Card ADT
          void SetSuit(char s);       // GetSuit prototype:  Returns current value of suit
              
          virtual string Description() const; // Description prototype: Polymorphic Function!!!
-                                     // Outputs card characteristics - value as a string (see sample output from p01input1.txt)
+                                             // Outputs card characteristics - value as a string (see sample output from p01input1.txt)
 };
 
 
