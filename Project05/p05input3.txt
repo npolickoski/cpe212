@@ -1,0 +1,28 @@
+// p05input3.txt - Test BSTree(), CopyConstructor, = , ~BSTree()
+
+# Test Copy Constructor
+c
++  1234 Jefferson  Thomas
++  888  Nixon      Richard
++  5678 Washington George
++  555  Lincoln    Abraham
++  1000 Madison    James
+p
+!  007  Bond       James
+d
+
+
+# Test Assignment Operator
+c
++  1234 Jefferson  Thomas
++  888  Nixon      Richard
++  5678 Washington George
++  555  Lincoln    Abraham
++  1000 Madison    James
+p
+=  007  Bond       James
+d
+
+
+
+

@@ -1,0 +1,47 @@
+// p05input7.txt - Test Level()
+
+# Test level as tree grows level by level
+c
++  555  Lincoln    Abraham
++  1000 Madison    James
++  1234 Jefferson  Thomas
++  5678 Washington George
+p
+? 555
+? 1000
+? 1234
+? 5678
+d
+
+
+# Test level as with a more balance tree
+c
++  555  Lincoln    Abraham
++  1000 Madison    James
++  1234 Jefferson  Thomas
++  5678 Washington George
++  888  Nixon      Richard
+p
+? 555
+? 1000
+? 1234
+? 5678
+? 888
+d
+
+
+# Test level with single node tree
+c
++  888  Nixon      Richard
+p
+? 888
+d
+
+
+# Test level with empty tree
+c
+p
+? 888
+d
+
+

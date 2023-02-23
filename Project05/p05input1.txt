@@ -1,0 +1,68 @@
+// p05input1.txt - Test BSTree(), InsertItem(), ~BSTree()
+
+# Test creating empty binary search tree
+c
+p
+d
+
+
+# Test adding one student object to binary search tree
+c
++  5678 Washington George
+p
+d
+
+
+# Test adding student objects pre-sorted highest to lowest id
+c
++  5678 Washington George
+p
++  1234 Jefferson  Thomas
+p
++  1000 Madison    James
+p
++  888  Nixon      Richard
+p
++  555  Lincoln    Abraham
+p
+d
+
+
+# Test adding student objects pre-sorted lowest to highest id
+c
++  555  Lincoln    Abraham
+p
++  888  Nixon      Richard
+p
++  1000 Madison    James
+p
++  1234 Jefferson  Thomas
+p
++  5678 Washington George
+p
+d
+
+
+# Test adding an unsorted sequence of student objects
+c
++  1234 Jefferson  Thomas
+p
++  888  Nixon      Richard
+p
++  5678 Washington George
+p
++  555  Lincoln    Abraham
+p
++  1000 Madison    James
+p
+d
+
+
+# Test adding duplicate student object to tree
+c
++  1234 Jefferson  Thomas
+p
++  1234 Jefferson  Thomas
+p
+d
+

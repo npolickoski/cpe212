@@ -1,0 +1,125 @@
+// p05input2.txt - Test BSTree(), InsertItem(), DeleteItem(), MakeEmpty(), ~BSTree()
+
+# Test deleting leaf node that is the left child of its parent
+c
++  5678 Washington George
++  1234 Jefferson  Thomas
++  1000 Madison    James
++  555  Lincoln    Abraham
+p
+-  555
+p
+d
+
+
+# Test deleting leaf node that is the right child of its parent
+c
++  555  Lincoln    Abraham
++  1000 Madison    James
++  1234 Jefferson  Thomas
++  5678 Washington George
+p
+-  5678
+p
+d
+
+
+# Test deleting parent node that has only a left child
+c
++  5678 Washington George
++  1234 Jefferson  Thomas
++  1000 Madison    James
++  555  Lincoln    Abraham
+p
+-  1000
+p
+d
+
+
+# Test deleting parent node that has only a right child
+c
++  555  Lincoln    Abraham
++  1000 Madison    James
++  1234 Jefferson  Thomas
++  5678 Washington George
+p
+-  1234
+p
+d
+
+
+# Test deleting parent node that has two children
+c
++  555  Lincoln    Abraham
++  1000 Madison    James
++  1234 Jefferson  Thomas
++  5678 Washington George
++  888  Nixon      Richard
+p
+-  1000
+p
+d
+
+
+# Test deleting root node
+c
++  1000 Madison    James
++  1234 Jefferson  Thomas
++  555  Lincoln    Abraham
+p
+-  1000
+p
+d
+
+
+# Test deleting only node leaving empty tree
+c
++  888  Nixon      Richard
+p
+-  888
+p
+d
+
+
+# Test deleting value not in tree
+c
++  888  Nixon      Richard
+p
+-  555
+p
+d
+
+
+# Test deleting value from empty tree
+c
+-  333
+p
+d
+
+
+
+# Test MakeEmpty deallocating all nodes
+c
++  1234 Jefferson  Thomas
++  888  Nixon      Richard
++  5678 Washington George
++  555  Lincoln    Abraham
++  1000 Madison    James
+p
+m
+p
+d
+
+
+# Test MakeEmpty deallocating nodes from empty tree
+c
+p
+m
+p
+d
+
+
+
+
+
+

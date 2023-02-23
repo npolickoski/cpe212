@@ -1,0 +1,46 @@
+// p05input6.txt - Test TotalLevels()
+
+# Test totallevels as tree grows level by level
+c
++  555  Lincoln    Abraham
+p
+l
++  1000 Madison    James
+p
+l
++  1234 Jefferson  Thomas
+p
+l
++  5678 Washington George
+p
+l
+d
+
+
+# Test totallevels as with a more balance tree
+c
++  555  Lincoln    Abraham
++  1000 Madison    James
++  1234 Jefferson  Thomas
++  5678 Washington George
++  888  Nixon      Richard
+p
+l
+d
+
+
+# Test totallevels with single node tree
+c
++  888  Nixon      Richard
+p
+l
+d
+
+
+# Test totallevels with empty tree
+c
+p
+l
+d
+
+

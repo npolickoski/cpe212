@@ -1,0 +1,132 @@
+// p05input5.txt - Test Min(), Max()
+
+# Test when min is a left child
+c
++  5678 Washington George
++  1234 Jefferson  Thomas
+p
+<
++  1000 Madison    James
++  555  Lincoln    Abraham
+p
+<
+d
+
+
+# Test when min is root
+c
++  555  Lincoln    Abraham
++  1000 Madison    James
++  1234 Jefferson  Thomas
++  5678 Washington George
+p
+<
+d
+
+
+# Test deleting parent node that has two children
+c
++  1234 Jefferson  Thomas
++  555  Lincoln    Abraham
++  1000 Madison    James
+p
+<
++  5678 Washington George
++  888  Nixon      Richard
+p
+<
+d
+
+
+# Test when min has a right child
+c
++  1000 Madison    James
++  1234 Jefferson  Thomas
+p
+<
++  555  Lincoln    Abraham
++  888  Nixon      Richard
+p
+<
+d
+
+
+# Test when min is the only value
+c
++  888  Nixon      Richard
+p
+<
+d
+
+
+# Test min when tree is empty
+c
+p
+<
+d
+
+
+# Test when max is a left child
+c
++  5678 Washington George
++  1234 Jefferson  Thomas
++  1000 Madison    James
++  555  Lincoln    Abraham
+p
+>
+d
+
+
+# Test when max is root
+c
++  555  Lincoln    Abraham
++  1000 Madison    James
++  1234 Jefferson  Thomas
++  5678 Washington George
+p
+>
+d
+
+
+# Test max when parent node that has two children
+c
++  1234 Jefferson  Thomas
++  555  Lincoln    Abraham
++  1000 Madison    James
+p
+>
++  5678 Washington George
++  888  Nixon      Richard
+p
+>
+d
+
+
+# Test when max has a right child
+c
++  1000 Madison    James
++  1234 Jefferson  Thomas
+p
+>
++  555  Lincoln    Abraham
++  888  Nixon      Richard
+p
+>
+d
+
+
+# Test when max is the only value
+c
++  888  Nixon      Richard
+p
+>
+d
+
+
+# Test max when tree is empty
+c
+p
+>
+d
+
+

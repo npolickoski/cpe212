@@ -1,0 +1,83 @@
+// p05input4.txt - Test Size()
+
+# Test correctness of size when adding student objects
+c
+p
+s
++  1234 Jefferson  Thomas
+p
+s
++  888  Nixon      Richard
+p
+s
++  5678 Washington George
+p
+s
++  555  Lincoln    Abraham
+p
+s
++  1000 Madison    James
+p
+s
+d
+
+
+# Test correctness of size when deleting student objects
+c
+s
++  1234 Jefferson  Thomas
++  888  Nixon      Richard
++  5678 Washington George
++  555  Lincoln    Abraham
++  1000 Madison    James
+p
+s
+- 555
+p
+s
+- 1234
+p
+s
+- 888
+p
+s
+- 5678
+p
+s
+- 1000
+p
+s
+d
+
+
+# Test correctness of size when adding and deleting student objects
+c
++  1234 Jefferson  Thomas
+s
++  888  Nixon      Richard
+s
++  5678 Washington George
+p
+s
+- 888
+p
+s
++  555  Lincoln    Abraham
+p
+s
++  1000 Madison    James
+p
+s
+- 1234
+p
+s
+d
+
+
+
+# Test correctness of size for empty tree
+c
+p
+s
+d
+
