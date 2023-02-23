@@ -1,0 +1,40 @@
+# p06input2.txt - Test Graph(), ~Graph(), AddVertex(), AddEdge() with directed graph
+c
+v A
+v B
+v C
+v D
+d A B 5
+d A C 10
+d B C 15
+d B D 25
+d C D 20
+p
+~
+
+
+c
+v A
+v B
+v C
+v D
+v E
+v F
+v G
+v H
+d A B 25
+d A C 10
+d A E 60
+d B G 75
+d B H 15
+d C E 15
+d D F 25
+d D H 80
+d E G 35
+d E F 5
+d F H 40
+p
+~
+
+
+

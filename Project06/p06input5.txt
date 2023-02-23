@@ -1,0 +1,23 @@
+# p06input5.txt - Test DepthFirstSearch() and supporting functions
+
+c
+v A
+v B
+v C
+v D
+u A B 5
+u A C 10
+u B C 15
+u B D 25
+u C D 20
+p
+s A B
+s A C
+s A D
+s A K
+s D A
+~
+
+
+
+

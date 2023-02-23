@@ -1,0 +1,31 @@
+# p06input4.txt - Test WeightIs() and its error handling
+
+c
+v A
+v B
+v C
+v D
+v E
+v F
+v G
+v H
+u A B 25
+u A C 10
+u A E 60
+u B G 75
+u B H 15
+u C E 15
+u D F 25
+u D H 80
+u E G 35
+u E F 5
+u F H 40
+p
+w E F
+w F H
+w A K
+w A H
+~
+
+
+
