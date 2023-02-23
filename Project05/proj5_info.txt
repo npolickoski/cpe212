@@ -1,0 +1,118 @@
+
+Before starting down the project05_materials.zip
+
+Download project05_materials.zip file.
+
+Project05      Version 1.0
+Submit Your Solution Using Canvas
+
+< Important Notes >
+
+Start early to give yourself an opportunity to ask questions!!! 
+
+Waiting to the last minute to begin the assignment is not recommended and will not get you an extension on the submission deadline. 
+
+Debugging issues are far easier to resolve in person when we can see exactly what you and your code are doing. 
+
+All CPE 212 projects are automatically graded in order to provided you timely feedback.  So, it is critical that you follow all directions for the preparation and submission of your projects for grading.  Failure to follow the directions may result in zero credit (0 points).
+
+<Project05 Description>
+
+Complete the provided partial C++ program that will implement a BSTree ADT Class Template in which the internal representation of the binary search tree uses linked, dynamically allocated nodes. 
+
+A CLASS TEMPLATE is a pattern used by the compiler to create new data types (classes).  A variable declaration in the client code provides type arguments to the template.  For example, the declaration   BSTree<Student>*  tPtr;  tells the compiler to create a pointer called tPtr to a binary search tree object that will store Student object values arranged according to their unique student id numbers.  Such a declaration appears within main.cpp client program.
+
+The lecture notes and textbook provide the source code for basic binary search tree operations, but you will need to modify this code to complete this assignment.  Two of the key modifications will be the addition of the specified exception detection/handling and the conversion to a template. 
+
+You will also have to write additional BSTree ADT Class Template functions as described in bstree.h.  These additional operations [ Min(), Max(), Level(value), TotalLevels() ] provide an opportunity for you to demonstrate your knowledge of the binary search tree container.  Additional details may be found in bstree.h.
+
+<Project05 Files Provided – DO NOT MODIFY OR SUBMIT THESE FILES ** >
+
+bstree.h – declares the BSTree ADT Template implemented as linked dynamically allocated nodes
+
+student.h and student.cpp – declares and implements the Student ADT
+
+main.cpp – includes a sample main() function test driver for the BSTree class.
+
+makefile – includes all commands required to compile and link your project on blackhawk
+
+Do not modify or submit any of the provided files named above** !!!  
+
+**Failure to satisfy these requirements will result in zero credit (0 points) on this assignment.
+
+All output to the monitor (stdout) will be performed by the code provided.
+
+<Project05 FILE YOU MUST WRITE AND SUBMIT ** >
+
+bstree.cpp – add your code here to implement BSTree Template functionality  (note that the code in this file must not include any INPUT or OUTPUT statements. A PRINT function has already been provided for you (declared in bstree.h and implemented in main.cpp) for debugging purposes). 
+
+===>   Submit only the SOURCE CODE in bstree.cpp for grading.**    <===
+
+**Failure to satisfy these requirements will result in zero credit (0 points) on this assignment.
+
+<Project05 Sample Solution>
+
+    Use the sample solution to help you debug your program – your goal should be to match the output of your program to that of the sample solution.
+    Run the sample solution by typing the following in a blackhawk terminal window :
+
+/home/work/cpe212/project05/p05      SomeSampleInputFileNameHere
+
+<Project05 Preview Script>
+
+    You may run the preview script by typing the following at a blackhawk terminal window prompt:
+
+/home/work/cpe212data/project05/preview05.bash
+
+<Project05 Include File Constraints **>
+
+All allowed include files within bstree.cpp appear below:
+
+#include <iostream>
+
+#include <new>
+
+#include "bstree.h"
+
+Use of the Standard Template Library containers or container adapters is not allowed.  
+
+** Failure to follow these directions will result in zero (0) credit on this assignment.
+
+<Project05 Submission Instructions>
+
+Once you are satisfied with your solution, submit the ONE file named below via the Project05 Canvas assignment.   Submissions by email receive ZERO CREDIT (0 points)!!!
+
+bstree.cpp
+
+NOTE: Your project submission will be automatically graded so it is EXTREMELY IMPORTANT that you READ and FOLLOW the project directions.
+
+Failure to follow directions may result in ZERO CREDIT (0 points) on this assignment.
+
+<Project05 Hints>
+
+You will be better prepared for the Final Exam if you can write the BSTree ADT Template code on your own rather than just copying code from the textbook or lecture notes since the written exams are CLOSED BOOK and CLOSED NOTES.
+
+When adapting the code provided during lecture, you will need to make modifications to convert the code into a class template.   See the Generic Stack example in the lecture notes.
+
+Remember, you cannot compile the BSTree ADT Class Template separately from the client code that provides you with the type argument for the template.  The bstree.h file and makefile provided take this into account for you.  Note: the file bstree.o will not be created.
+
+<Project05 Compilation Instructions>
+
+This project consists of multiple files (.h and .cpp files) provided by the instructor.  You have been provided with a makefile that contains all commands required to compile and link your project on blackhawk.  So, for this assignment, all you must do to compile the program is to use the following command
+
+make
+
+which will follow the makefile instructions to create an executable named Project05 from the various project .h and .cpp files.
+
+If your program compiled successfully, just type  ./project05  InputFile   to execute your program.
+
+<Project05 BSTree Functions>
+
+The code for the Binary Search Tree has largely been covered in the textbook and lecture notes although some modifications are required. 
+
+Some of the required modifications are listed below:
+
+    the helper functions have been made member functions of the BSTree class
+    you will need to implement a copy constructor
+    you will also need to overload the assignment operator for the BSTree class
+    you will need to add the requested error handling
+    you may need to modify the code provided in the book/notes to match the interfaces selected for this assignment
