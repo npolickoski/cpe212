@@ -1,0 +1,138 @@
+
+Download the project04_materials.zip
+
+Download project04_materials.zip first.
+
+< Important Notes >
+
+Start early to give yourself an opportunity to ask questions!!! 
+
+Waiting to the last minute to begin the assignment is not recommended and will not get you an extension on the submission deadline. 
+
+Debugging issues are far easier to resolve in person when we can see exactly what you and your code are doing. 
+
+All CPE 212 projects are automatically graded in order to provided you timely feedback.  So, it is critical that you follow all directions for the preparation and submission of your projects for grading.  Failure to follow the directions may result in zero credit (0 points).
+
+<Project04 Goals and Description>
+
+As part of this assignment, you will once again practice implementing components that will be integrated to form a larger product.  This time you will write List class that will be integrated into a larger software product provided by the instructor.  This List class uses a linked sequence of dynamically allocated nodes to store the words in a phrase.  Each word is stored as a string in a list node.  The  List class includes several member functions that will enable the client code to Append a word to the end of the current phrase, Find a word within the current phrase, Replace a word in the phrase, determine the Length of the current phrase, Delete a word from the phrase, or insert a word at a particular position within the phrase.  These functions are described in more detail in  list.h
+
+-  Do not modify main.cpp or list.h !!!      You will write list.cpp !!!
+
+- All program output is performed by the code in the main.cpp file – do not include any output statements in the files you write!!!
+
+The interfaces to each of these functions you must write are described in detail on subsequent pages and in the files provided
+
+Hint:   Match the output of your program to that of the sample solution!!!
+
+          Directions for running the sample solution appear on the following page.
+
+ Running the Sample Solution on blackhawk
+
+The best description of what your code should do is the Sample Solution for the project. 
+
+Run the sample solution by typing the following at blackhawk terminal window command prompt
+
+/home/work/cpe212/project04/p04   inputfilename
+
+where inputfilename is the name of one of the provided input files (for example, p04input1.txt).  Your current working directory must contain the input files for this to work.
+
+Unzipping Sample Input Files on blackhawk
+
+Download the project04_materials.zip
+
+Download project04_materials.zip.  At terminal window prompt, use the unzip utility to uncompress the files. 
+
+For example:           unzip  NameOfZipFileHere
+
+to unzip the files into your current directory.
+
+Since this project is worth five points, you have been given five input files to test your program. 
+
+Running the Preview Script on blackhawk
+
+Run the preview script by typing the following in a blackhawk terminal window command prompt
+
+/home/work/cpe212data/project04/preview04.bash
+
+This script will run both the Sample Solution AND your project04 executable program on the complete set of input files, and it compares the outputs of the two programs line by line to identify errors in your program's outputs.  Make sure that the output of your program exactly matches the output of the Sample Solution.
+
+ <Project04 Compilation Instructions>
+
+This project consists of multiple C++ files so you do not want to compile and link these files manually.  The makefile contains the sequence of commands required to compile and assemble (link) your executable program.  The provided file works on blackhawk.  So, for this assignment, all you must do to compile the program is to use the following command at the Linux command line
+
+make
+
+which will create an executable named  project04 from the provided files main.cpp and the files you have written. 
+
+If your program compiled successfully, you may then type
+
+./project04   NameOfInputFile
+
+to execute your program assuming that the input file is located in the same directory with the executable.   (For example,   ./project04  p04input1.txt  )
+
+To force all files to be recompiled and relinked, type the following sequence of commands at the Linux prompt.
+
+make clean
+
+make
+
+<Project04 Include File Constraints>
+
+On Project04, the following include files are permitted within your list.cpp file. 
+
+ #include <iostream>
+
+#include <new>
+
+#include "list.h"
+
+ No additional include files are allowed!!!
+
+Failure to follow these directions will result in zero (0) credit on this assignment.
+
+<Project04 Debugging Assistance >
+
+Your program must be fully commented (including variable and parameter declarations, function descriptions, descriptions of logical blocks of code, etc.)  in order to receive debugging assistance from the instructor and teaching assistants.   
+
+<Project04 Hints>
+
+See list.h for a description of the methods of the List ADT.
+
+Once again, I recommend creating an Empty Framework of function definitions that compiles first – before adding any code to any function.
+
+Some functions such as the constructor List(), destructor ~List(), and Append() are critical operations that must be functional in order to test other operations.  Make sure that these critical operations work first before adding code for any non-critical  operations.
+
+ 
+
+<Important Project04 Submission Instructions>
+
+(1)  Follow all submission instructions provided on Angel.
+
+(2)  Below is a list of the files you must submit.  It is very important that you use the correct file names: [lowercase letters, no spaces, no underscores] in order for your program to compile and execute.
+
+list.cpp                   (write and submit this file using the information from list.h)
+
+ 
+
+A COMPLETE SUBMISSION is one that includes the specified file as an attachment to the your submission.   All other submissions will be considered to be incomplete.
+
+INCOMPLETE SUBMISSIONS will receive zero credit (0 points) on this assignment.
+
+DO NOT USE A FILE COMPRESSION PROGRAM     (.zip, .tar, etc. are not allowed)
+
+Failure to satisfy this requirement will result in zero credit (0 points) on this assignment.
+
+(3) Do not modify or submit the file named main.cpp or list.h !!!       
+
+Failure to satisfy this requirement will result in zero credit (0 points) on this assignment.
+
+(4)  All output to the monitor (stdout) will be performed by the code provided in main.cpp
+
+NOTE:  Your project submission will be automatically graded so it is EXTREMELY IMPORTANT that you READ and FOLLOW the project directions.
+
+Submit only the specified files  via Canvas.
+
+Submisssions by email receive ZERO CREDIT (0 points)!!!
+
+Submissions that do not compile receive ZERO CREDIT (0 points)!!!
