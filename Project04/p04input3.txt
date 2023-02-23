@@ -1,0 +1,51 @@
+# p04input3.txt -- Test List(), ~List(), Delete()
+
+# Test successful delete
+c
+p
+a See
+p
+a Spot
+p
+a run
+p
+a swiftly
+p
+a away
+p
+- run
+p
+- Spot
+p
+- See
+p
+- away
+p
+- swiftly
+p
+d
+
+
+
+# Test unsuccessful delete
+c
+p
+a See
+p
+a Spot
+p
+a run
+p
+a slowly
+p
+a away
+p
+- Observe
+p
+- spot
+p
+d
+
+
+
+

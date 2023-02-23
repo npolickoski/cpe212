@@ -1,0 +1,31 @@
+# p04input5.txt -- Test InsertAt()
+
+# Test successful InsertAt
+c
+a See
+a Spot
+a run
+p
++ 0 Zero
+p
++ 1 One
+p
++ 4 Four
+p
++ 5 Five
+p
++ 7 Seven
+p
+
+# Test unsuccessful InsertAt
++ -1 Bad
+p
++ 10 Ten
+p
++ 20 Twenty
+p
+d
+
+
+
+

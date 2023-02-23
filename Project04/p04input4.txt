@@ -1,0 +1,38 @@
+# p04input4.txt -- Test Replace()
+
+# Test successful replace
+c
+p
+a See
+p
+a Spot
+p
+a run
+p
+p
+r run walk
+p
+r See Observe
+p
+r Spot Dot
+p
+d
+
+
+# Test unsuccessful replace
+c
+a See
+a Spot
+a run
+a swiftly
+a away
+p
+r spot goat
+p
+r goat boat
+p
+d
+
+
+
+

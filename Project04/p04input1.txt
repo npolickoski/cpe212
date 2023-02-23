@@ -1,0 +1,38 @@
+# p04input1.txt -- Test List(), ~List(), Length(), Append()
+
+# Test Append()
+c
+p
+a See
+p
+a Spot
+p
+a run
+p
+d
+
+
+# Test Length()
+c
+l
+p
+a Observe
+l
+p
+a Spot
+l
+p
+a running
+l
+p
+a swiftly
+l
+p
+a away
+l
+p
+d
+
+
+
+

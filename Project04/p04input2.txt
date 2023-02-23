@@ -1,0 +1,44 @@
+# p04input2.txt -- Test List(), ~List(), Append(), Find()
+
+# Test successful find
+c
+p
+a See
+p
+a Spot
+p
+a run
+p
+? See
+p
+? Spot
+p
+? run
+p
+d
+
+
+# Test unsuccessful find
+c
+p
+a Observe
+p
+a Spot
+p
+a running
+p
+a swiftly
+p
+a away
+p
+? slowly
+p
+? run
+p
+? spot
+p
+d
+
+
+
+
