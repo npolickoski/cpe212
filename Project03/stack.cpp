@@ -80,7 +80,7 @@ int Stack::Size() const
 
 int Stack::Max() const
 {
-    int MaxOfStack = I-2147483648;                      // stdlib value for minimum integr (header file not allowed to be used)
+    int MaxOfStack = -2147483648;                      // stdlib value for minimum integr (header file not allowed to be used)
 
     for (int i = 0; i < Size() && i < Capacity(); i++)  // for all values of the stack array that don't excede # elements and # of spaces on stack that can be occupied
     {
