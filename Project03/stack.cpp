@@ -37,7 +37,7 @@ Stack::~Stack()
 {
     try
     {
-        if (NULL != array) 
+        if (nullptr != array) 
         {
             delete array;                                       // deallocates heap memory locations
         }
@@ -48,7 +48,7 @@ Stack::~Stack()
 
 void Stack::Push(int n)
 {
-    if (Capacity() == 0 || NULL == array)
+    if (Capacity() == 0 || nullptr == array)
     {
         throw StackFull();                                      // conditional for if there's nothing in the stack
     } 
@@ -78,7 +78,7 @@ void Stack::Pop()
 
 bool Stack::IsEmpty() const
 {
-    return (NULL == array || Size() <= 0) || (0 == Capacity());    // conditional if the top-most element of the stack is also the  bottem-most element
+    return (nullptr == array || Size() <= 0) || (0 == Capacity());    // conditional if the top-most element of the stack is also the  bottem-most element
 }
 
 
