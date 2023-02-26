@@ -26,9 +26,9 @@ Stack::Stack(int n)
 }
 
 
-Stack::~Stack()                 // in-progress
+Stack::~Stack()                
 {
-    if (nullptr != array) 
+    if (0 != array) 
     {
         delete array;
     }
@@ -80,7 +80,7 @@ int Stack::Size() const
 
 int Stack::Max() const
 {
-    int MaxOfStack = INT_MIN;                           // stdlib value for minimum integr
+    int MaxOfStack = I-2147483648;                      // stdlib value for minimum integr (header file not allowed to be used)
 
     for (int i = 0; i < Size() && i < Capacity(); i++)  // for all values of the stack array that don't excede # elements and # of spaces on stack that can be occupied
     {
@@ -93,7 +93,7 @@ int Stack::Max() const
 
 int Stack::Min() const
 {
-    int MinOfStack = INT_MIN;                           // stdlib value for minimum integr
+    int MinOfStack = -2147483648;                       // stdlib value for minimum integr (header file not allowed to be used)
 
     for (int i = 0; i < Size() && i < Capacity(); i++)  // for all values of the stack array that don't excede # elements and # of spaces on stack that can be occupied
     {
