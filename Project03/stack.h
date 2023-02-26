@@ -33,13 +33,13 @@ class StackInvalidPeek
 };
 
 
-class Stack               // Models stack of integers ADT implemented as a dynamically allocated array
+class Stack              // Models stack of integers ADT implemented as a dynamically allocated array
 {
   private:
-    int* array;           // Points to the stack array
-	int  num;              // Holds max number of elements that may be stored in stack array
-	int  top;              // Holds the index of the top data value stored on the stack
-	void Resize(int n);    // Attempts to increase size of stack array to 2*num and then push n onto stack
+    int* array;          // Points to the stack array
+	  int  num;            // Holds max number of elements that may be stored in stack array
+	  int  top;            // Holds the index of the top data value stored on the stack
+	  void Resize(int n);  // Attempts to increase size of stack array to 2*num and then push n onto stack
 	                       // If unable to resize, throw StackFull exception
 	
   public:
@@ -56,7 +56,7 @@ class Stack               // Models stack of integers ADT implemented as a dynam
     void Pop();           // Removes top integer from stack
                           // If stack is empty, throws StackEmpty exception
 
-	bool IsEmpty() const;  // Returns true if stack is empty; false otherwise
+	  bool IsEmpty() const;  // Returns true if stack is empty; false otherwise
 	
     bool IsFull() const;  // Returns true if stack is full; false otherwise
 	
@@ -75,10 +75,10 @@ class Stack               // Models stack of integers ADT implemented as a dynam
     int Min() const;      // Returns value of smallest integer on stack WITHOUT modifying the stack
                           // If stack is empty, throws StackEmpty
 
-	int Peek(unsigned int n) const; // Returns stack value n levels down from top of stack. Peek(0) = Top()
+	  int Peek(unsigned int n) const; // Returns stack value n levels down from top of stack. Peek(0) = Top()
 	                                // If position n does not exist, throws StackInvalidPeek
 	
-	int Capacity() const;  // Returns total num of elements that maybe stored in stack array
+	  int Capacity() const;  // Returns total num of elements that maybe stored in stack array
 	
 	/*******  DO NOT MODIFY ANY OF THE CODE FOR PRINT()             *******/
 	/******   DO NOT PLACE A COPY OF PRINT() CODE IN STACK.CPP!!!   *******/
