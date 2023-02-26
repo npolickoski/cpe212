@@ -118,7 +118,7 @@ int Stack::Max() const
         throw StackEmpty();                                     // conditional for if nothing is in the stack at all
     }
 
-    int MaxOfStack = -2147483648;                               // stdlib value for minimum integr (header file not allowed to be used)
+    int MaxOfStack = 0;                                         // stdlib value for minimum integr (header file not allowed to be used)
     for (int i = 0; i < Size() && i < Capacity(); i++)          // for all values of the stack array that don't excede # elements and # of spaces on stack that can be occupied
     {
         MaxOfStack = std::max(MaxOfStack, Peek(i));             // using stdlib function for maxiumum value between current min. value and current element in the stack
@@ -135,7 +135,7 @@ int Stack::Min() const
         throw StackEmpty();                                     // conditional for if nothing is in the stack at all
     }
 
-    int MinOfStack = -2147483648;                               // stdlib value for minimum integr (header file not allowed to be used)
+    int MinOfStack = 0;                                         // stdlib value for minimum integr (header file not allowed to be used)
     for (int i = 0; i < Size() && i < Capacity(); i++)          // for all values of the stack array that don't excede # elements and # of spaces on stack that can be occupied
     {
         MinOfStack = std::min(MinOfStack, Peek(i));             // using stdlib function for miniumum value between current min. value and current element in the stack
@@ -164,3 +164,6 @@ int Stack::Capacity() const
 {
     return num;
 }
+
+
+//-2147483648
