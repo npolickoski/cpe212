@@ -165,6 +165,3 @@ int Stack::Capacity() const
 {
     return num;
 }
-
-
-//-2147483648
