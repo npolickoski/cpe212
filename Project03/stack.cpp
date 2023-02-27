@@ -7,15 +7,15 @@ void Stack::Resize(int n)
 {
     try
     {
-        size_t new_size = 2*num;                                // creates variable for doubling stack size
+        int new_size = 2 * num;                                 // creates variable for doubling stack size
 
-        int* newArrayPtr = new int[new_size];                   // heap memory allocation for new array
-        for(size_t i = 0; i < top; i++) 
+        int* newArray = new int[new_size];                      // heap memory allocation for new array
+        for(int i = 0; i < top; i++) 
         {
-            newArrayPtr[i] = array[i];
+            newArray[i] = array[i];
         }
 
-        array = newArrayPtr;                                    // relocates new array back to original array but with size change
+        array = newArray;                                       // relocates new array back to original array but with size change
         num = new_size;                                         // updates max size of the array to the doubled size
     }
     catch(...)
