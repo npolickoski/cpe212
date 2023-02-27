@@ -15,6 +15,7 @@ void Stack::Resize(int n)
             newArray[i] = array[i];
         }
 
+        delete array;
         array = newArray;                                       // relocates new array back to original array but with size change
         num = new_size;                                         // updates max size of the array to the doubled size
     }
