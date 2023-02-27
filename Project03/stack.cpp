@@ -10,7 +10,7 @@ void Stack::Resize(int n)
         int new_size = 2 * num;                                 // creates variable for doubling stack size
 
         int* newArray = new int[new_size];                      // heap memory allocation for new array
-        for(int i = 0; i < top; i++) 
+        for(int i = 0; i < num; i++)
         {
             newArray[i] = array[i];
         }
