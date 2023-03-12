@@ -160,16 +160,16 @@ int List::Length() const
 
 bool List::Find(string someword) const
 {
-    Node* IndxPtr = head;
+    Node* CrtPtr = head;
 
-    while(IndxPtr->next != NULL)                // iterates through all nodes in LList until tail node is reached
+    while (CrtPtr != NULL)                // iterates through all nodes in LList until tail node is reached
     {
-        if (IndxPtr->word == someword)          // condition for when desired is found
+        if (CrtPtr->word == someword)          // condition for when desired is found
         {
             return true;
         }
         
-        IndxPtr = IndxPtr->next;                // otherwise iteration continues
+        CrtPtr = CrtPtr->next;                // otherwise iteration continues
     }
 
     return false;
