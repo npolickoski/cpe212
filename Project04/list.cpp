@@ -55,23 +55,24 @@ List::~List()
 void List::Append(string newword)
 {
     Node* IndxPtr = new Node;
-    IndxPtr = head;
-
-    while(IndxPtr != NULL)                      // iterates til the tail node of the LList
-    {                                           //
-        IndxPtr = IndxPtr->next;                //
-    }                                           //                                               
-
     IndxPtr->word = newword;                    // assigns data to IndxPtr
-    IndxPtr->next = NULL;                       // assigns pointer of IndxPtr to NULL, thus making it the new tail node
+    IndxPtr->next = NULL;
 
     if (head == NULL)                           // condition for when there are no nodes in the LList
     {
         head = IndxPtr;
-        delete IndxPtr;
     }
+    else
+    {
+        Node* CrtPtr = head;
 
-    num++;                                      // increase the length by number of nodes added (1)
+        while(CrtPtr->next != NULL)             // iterates til the tail node of the LList
+        {                                       //
+            CrtPtr = CrtPtr->next;              //
+        }                                       //  
+
+        CrtPtr->next = IndxPtr;                                             
+    }
 
     return;
 }
