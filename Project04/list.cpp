@@ -11,44 +11,16 @@ List::List()
 
 List::~List()
 {
-    // Node* TempPtr = new Node;
-    // Node* IndxPtr = new Node;
+    Node* CrtPtr = head;
+    Node* IndxPtr = NULL;
 
-    // while(Length() != 0)
-    // {
-    //     IndxPtr = head;
-
-    //     while(IndxPtr->next != NULL)
-    //     {
-    //         TempPtr = IndxPtr;
-    //         IndxPtr = IndxPtr->next
-    //     }
-
-    //     TempPtr->next = NULL;
-
-    //     num--;
-    // }
-
-    // delete IndxPtr;
-    // delete TempPtr;
-    // delete head;
-
-    if (head != NULL)
+    while (CrtPtr != NULL)
     {
-        Node* TempPtr;
-
-        while(TempPtr->next != NULL)            // iterates through every node until the next node pointed to points to NULL
-        {
-            TempPtr = head->next;               // assigns temporary pointer after the current head (k -> k+1)
-            delete head;                        // removes current head node
-            head = TempPtr;                     // assiigns node after the previous head as the new head (k+1 = k now)
-        }
-
-        delete head;                            // deletes all nodes (current head/ temp. pointer)
-        delete TempPtr;
+        Node* IndxPtr = CrtPtr->next;
+        
+        delete CrtPtr;
+        CrtPtr = IndxPtr;
     }
-
-    num = 0;                                    // sets length (num of word nodes) to 0
 }
 
 
