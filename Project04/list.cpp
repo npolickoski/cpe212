@@ -134,27 +134,16 @@ void List::Replace(string oldword, string newword)
 
 int List::Length() const
 {
-    int num = 0;
-    Node* TempPtr;
+    int count = 0;
+    Node* CrtPtr = head;
 
-    if (head == NULL)                           // condition for when there are no nodes
+    while (CrtPtr != NULL)
     {
-        return 0;
+        count++;
+        CrtPtr = CrtPtr->next;
     }
-
-    TempPtr = head;
-    do
-    {
-        num++;                                  // adds 1 to length count
     
-        if (TempPtr->next != NULL)              // iterates through all nodes in LList until tail node is reached
-        {
-            TempPtr = TempPtr->next;
-        }
-
-    } while (TempPtr->next != NULL);
-    
-    return num;
+    return count;
 }
 
 
