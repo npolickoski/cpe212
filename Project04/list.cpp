@@ -164,7 +164,7 @@ void List::Replace(string oldword, string newword)
 
 int List::Length() const
 {
-    bitchass = 0;
+    int num = 0;
     Node* TempPtr = new Node;
 
     if (head == NULL)
@@ -175,7 +175,7 @@ int List::Length() const
     TempPtr = head;
     do
     {
-        bitchass++;
+        num++;
     
         if (TempPtr->next != NULL)
         {
@@ -184,7 +184,7 @@ int List::Length() const
 
     } while (TempPtr->next != NULL);
     
-    return bitchass;
+    return num;
 }
 
 
