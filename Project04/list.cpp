@@ -6,7 +6,7 @@
 List::List()
 {
     head = NULL;
-    num = 0;                                    // LList w only one node (element) must point to NULL until new node is linked 
+    //num = 0;                                    // LList w only one node (element) must point to NULL until new node is linked 
 }
 
 
@@ -60,7 +60,7 @@ void List::Append(string newword)
 
     while(IndxPtr->next != NULL)
     {
-        IndxPtr = IndxPtr->next
+        IndxPtr = IndxPtr->next;
     }
 
     IndxPtr->next = TempPtr;
@@ -89,7 +89,7 @@ void List::InsertAt(int pos, string newword)
 
     if (pos < Length())
     {
-        CtrPtr = head;
+        CrtPtr = head;
 
         for (int i = 0; i < pos; i++)
         {
@@ -164,7 +164,7 @@ void List::Replace(string oldword, string newword)
 
 int List::Length() const
 {
-    num = 0;
+    bitchass = 0;
     Node* TempPtr = new Node;
 
     if (head == NULL)
@@ -175,7 +175,7 @@ int List::Length() const
     TempPtr = head;
     do
     {
-        num++;
+        bitchass++;
     
         if (TempPtr->next != NULL)
         {
@@ -184,7 +184,7 @@ int List::Length() const
 
     } while (TempPtr->next != NULL);
     
-    return num;
+    return bitchass;
 }
 
 
