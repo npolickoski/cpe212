@@ -17,7 +17,7 @@ List::~List()
     while (CrtPtr != NULL)
     {
         Node* IndxPtr = CrtPtr->next;
-        
+
         delete CrtPtr;
         CrtPtr = IndxPtr;
     }
@@ -55,34 +55,30 @@ void List::InsertAt(int pos, string newword)
     if ((pos > Length()) || (pos < 0))          // exception handeling for when postion new node is added to is out of bounds
     {
         throw ListBadPosition();
-        return;
     }
 
-    Node* CrtPtr;
-    Node* AftPtr;
+    Node* TempPtr = new Node;
+    TempPtr->word = newword;
 
-    if (pos < Length())                         // condition for when the postion to add new node is within the length of the LList
+    if ((head == NULL) || (pos == 0))                         // condition for when the postion to add new node is within the length of the LList
     {
-        CrtPtr = head;
+        TempPtr->next = head;
+        head = TempPtr;
+    }    
+    else
+    {
+        Node* CrtPtr = head;
+        Node* BfrPtr = NULL;
 
         for (int i = 0; i < pos; i++)           // iterates until the desired postion in the LList is met
         {
+            BfrPtr = CrtPtr;
             CrtPtr = CrtPtr->next;
         }
 
-        AftPtr = CrtPtr;                        // creates exact copy of node at said position
-        CrtPtr->word = newword;                 // assigns new data to orignal node
-        CrtPtr->next = AftPtr;                  // "straightens out the string"
-        delete AftPtr;                          // removes temp. poiner "AftPtr" to not cause memory leak
+        TempPtr->next = CrtPtr;
+        BfrPtr->next = TempPtr;
     }
-    else if (pos == Length())                   // condition for when the desired postion is the tail node
-    {
-        Append(newword);                        // use Appened method
-    }
-
-    num++;                                      // increases length
-
-    //throw ListFull();
     
     return;
 }
