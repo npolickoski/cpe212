@@ -5,7 +5,8 @@
 
 List::List()
 {
-    head = NULL;                                // initalizing first node in the LList
+    head = new Node;
+    cout << head;                                // initalizing first node in the LList
     //num = 0;                                     
 }
 
@@ -62,14 +63,14 @@ void List::Append(string newword)
 
     Node* IndxPtr = new Node;
     
-    if (IndxPtr == NULL)
-    {
-        cout << IndxPtr << " :)";
-    }
-    else
-    {
-        cout << IndxPtr->word << endl << IndxPtr->next << endl << IndxPtr;
-    }
+    // if (IndxPtr == NULL)
+    // {
+    //     cout << IndxPtr << " :)";
+    // }
+    // else
+    // {
+    //     cout << IndxPtr->word << endl << IndxPtr->next << endl << IndxPtr;
+    // }
 
     while(IndxPtr != NULL)                      // iterates til the tail node of the LList
     {                                           //
