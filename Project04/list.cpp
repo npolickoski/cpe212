@@ -55,18 +55,15 @@ List::~List()
 
 void List::Append(string newword)
 {
-    Node* TempPtr;
     Node* IndxPtr = head;
 
     while(IndxPtr != NULL)                      // iterates til the tail node of the LList
     {                                           //
         IndxPtr = IndxPtr->next;                //
-    }                                           //
+    }                                           //                                               
 
-    IndxPtr->next = TempPtr;                    // assigns the pointer of the tail node to TempPtr instead of NULL now
-
-    TempPtr->word = newword;                    // assigns data to TempPtr
-    TempPtr->next = NULL;                       // assigns pointer of TempPtr to NULL, thus making it the new tail node
+    IndxPtr->word = newword;                    // assigns data to IndxPtr
+    IndxPtr->next = NULL;                       // assigns pointer of IndxPtr to NULL, thus making it the new tail node
 
     num++;                                      // increase the length by number of nodes added (1)
 
