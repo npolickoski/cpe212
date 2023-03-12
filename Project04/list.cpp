@@ -5,8 +5,8 @@
 
 List::List()
 {
-    head = NULL;
-    //num = 0;                                    // LList w only one node (element) must point to NULL until new node is linked 
+    head = NULL;                                // initalizing first node in the LList
+    //num = 0;                                     
 }
 
 
@@ -38,18 +38,18 @@ List::~List()
     {
         Node* TempPtr = new Node;
 
-        while(TempPtr->next != NULL)
+        while(TempPtr->next != NULL)            // iterates through every node until the next node pointed to points to NULL
         {
-            TempPtr = head->next;
-            delete head;
-            head = TempPtr;
+            TempPtr = head->next;               // assigns temporary pointer after the current head (k -> k+1)
+            delete head;                        // removes current head node
+            head = TempPtr;                     // assiigns node after the previous head as the new head (k+1 = k now)
         }
 
-        delete head;
+        delete head;                            // deletes all nodes (current head/ temp. pointer)
         delete TempPtr;
     }
 
-    num = 0;
+    num = 0;                                    // sets length (num of word nodes) to 0
 }
 
 
@@ -58,17 +58,17 @@ void List::Append(string newword)
     Node* TempPtr = new Node;
     Node* IndxPtr = head;
 
-    while(IndxPtr->next != NULL)
-    {
-        IndxPtr = IndxPtr->next;
-    }
+    while(IndxPtr->next != NULL)                // iterates til the tail node of the LList
+    {                                           //
+        IndxPtr = IndxPtr->next;                //
+    }                                           //
 
-    IndxPtr->next = TempPtr;
+    IndxPtr->next = TempPtr;                    // assigns the pointer of the tail node to TempPtr instead of NULL now
 
-    TempPtr->word = newword;
-    TempPtr->next = NULL;
+    TempPtr->word = newword;                    // assigns data to TempPtr
+    TempPtr->next = NULL;                       // assigns pointer of TempPtr to NULL, thus making it the new tail node
 
-    num++;
+    num++;                                      // increase the length by number of nodes added (1)
 
     //throw ListFull();
 
@@ -78,7 +78,7 @@ void List::Append(string newword)
 
 void List::InsertAt(int pos, string newword)
 {
-    if ((pos > Length()) || (pos < 0))
+    if ((pos > Length()) || (pos < 0))          // exception handeling for when postion new node is added to is out of bounds
     {
         throw ListBadPosition();
         return;
@@ -87,26 +87,26 @@ void List::InsertAt(int pos, string newword)
     Node* CrtPtr = new Node;
     Node* AftPtr = new Node;
 
-    if (pos < Length())
+    if (pos < Length())                         // condition for when the postion to add new node is within the length of the LList
     {
         CrtPtr = head;
 
-        for (int i = 0; i < pos; i++)
+        for (int i = 0; i < pos; i++)           // iterates until the desired postion in the LList is met
         {
             CrtPtr = CrtPtr->next;
         }
 
-        AftPtr = CrtPtr;
-        CrtPtr->word = newword;
-        CrtPtr->next = AftPtr;                            // straightens out the "string"
-        delete AftPtr;
+        AftPtr = CrtPtr;                        // creates exact copy of node at said position
+        CrtPtr->word = newword;                 // assigns new data to orignal node
+        CrtPtr->next = AftPtr;                  // "straightens out the string"
+        delete AftPtr;                          // removes temp. poiner "AftPtr" to not cause memory leak
     }
-    else if (pos == Length())
+    else if (pos == Length())                   // condition for when the desired postion is the tail node
     {
-        Append(newword);
+        Append(newword);                        // use Appened method
     }
 
-    num++;
+    num++;                                      // increases length
 
     //throw ListFull();
     
@@ -116,7 +116,7 @@ void List::InsertAt(int pos, string newword)
 
 void List::Delete(string someword)
 {
-    if (!(Find(someword)))
+    if (!(Find(someword)))                      // exception handling for when desired word to delete is not found
     {
         throw ListNotFound();
         return;
@@ -125,22 +125,22 @@ void List::Delete(string someword)
     Node* TempPtr = NULL;
     Node* IndxPtr = head;
 
-    while(IndxPtr->word != someword)
+    while(IndxPtr->word != someword)            // interates through all nodes for exact data match
     {
-        TempPtr = IndxPtr;
-        IndxPtr = IndxPtr->next;
+        TempPtr = IndxPtr;                      // must keep copy of previous node (k-1)
+        IndxPtr = IndxPtr->next;                // iterates to next node in LList
     }
     
-    TempPtr->next = IndxPtr->next;
-    delete IndxPtr;
-    
+    TempPtr->next = IndxPtr->next;              // once data is found, pointer to the node that contains said data is 
+    delete IndxPtr;                             //      rerouted to node after said and thus deleted 
+                                                // Ex: "k-1 -> k -> k+1" is now "k-1 -> k+1; k is deleted"    
     return;
 }
 
 
 void List::Replace(string oldword, string newword)
 {
-    if (!(Find(oldword)))
+    if (!(Find(oldword)))                       // exception handeled for when data to replace is not in LList
     {
         throw ListNotFound();
         return;
@@ -148,12 +148,12 @@ void List::Replace(string oldword, string newword)
 
     Node* IndxPtr = head;
 
-    while(IndxPtr->word != oldword)
+    while(IndxPtr->word != oldword)             // iterates through all nodes until desired data is found
     {
         IndxPtr = IndxPtr->next;
     }
 
-    if (IndxPtr->word == oldword)
+    if (IndxPtr->word == oldword)               // assigns new data to node
     {
         IndxPtr->word = newword;
     }
@@ -167,7 +167,7 @@ int List::Length() const
     int num = 0;
     Node* TempPtr = new Node;
 
-    if (head == NULL)
+    if (head == NULL)                           // condition for when there are no nodes
     {
         return 0;
     }
@@ -175,9 +175,9 @@ int List::Length() const
     TempPtr = head;
     do
     {
-        num++;
+        num++;                                  // adds 1 to length count
     
-        if (TempPtr->next != NULL)
+        if (TempPtr->next != NULL)              // iterates through all nodes in LList until tail node is reached
         {
             TempPtr = TempPtr->next;
         }
@@ -192,14 +192,14 @@ bool List::Find(string someword) const
 {
     Node* IndxPtr = head;
 
-    while(IndxPtr->next != NULL)
+    while(IndxPtr->next != NULL)                // iterates through all nodes in LList until tail node is reached
     {
-        if (IndxPtr->word == someword)
+        if (IndxPtr->word == someword)          // condition for when desired is found
         {
             return true;
         }
         
-        IndxPtr = IndxPtr->next;
+        IndxPtr = IndxPtr->next;                // otherwise iteration continues
     }
 
     return false;
