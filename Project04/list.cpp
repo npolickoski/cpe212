@@ -56,21 +56,8 @@ List::~List()
 
 void List::Append(string newword)
 {
-    if (Length() == 0)                          // condition for when there are no nodes in the LList
-    {
-        head = new Node;
-    }
-
     Node* IndxPtr = new Node;
-    
-    // if (IndxPtr == NULL)
-    // {
-    //     cout << IndxPtr << " :)";
-    // }
-    // else
-    // {
-    //     cout << IndxPtr->word << endl << IndxPtr->next << endl << IndxPtr;
-    // }
+    IndxPtr = head;
 
     while(IndxPtr != NULL)                      // iterates til the tail node of the LList
     {                                           //
@@ -80,9 +67,13 @@ void List::Append(string newword)
     IndxPtr->word = newword;                    // assigns data to IndxPtr
     IndxPtr->next = NULL;                       // assigns pointer of IndxPtr to NULL, thus making it the new tail node
 
-    num++;                                      // increase the length by number of nodes added (1)
+    if (head == NULL)                           // condition for when there are no nodes in the LList
+    {
+        head = IndxPtr;
+        delete IndxPtr;
+    }
 
-    //throw ListFull();
+    num++;                                      // increase the length by number of nodes added (1)
 
     return;
 }
