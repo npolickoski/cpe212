@@ -55,7 +55,17 @@ List::~List()
 
 void List::Append(string newword)
 {
-    Node* IndxPtr = head;
+    if (Length() == 0)                          // condition for when there are no nodes in the LList
+    {
+        head = new Node;
+    }
+
+    Node* IndxPtr = new Node;
+    
+    if (IndxPtr == NULL)
+    {
+        cout << "Yes";
+    }
 
     while(IndxPtr != NULL)                      // iterates til the tail node of the LList
     {                                           //
