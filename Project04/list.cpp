@@ -58,7 +58,7 @@ void List::Append(string newword)
     Node* TempPtr = new Node;
     Node* IndxPtr = head;
 
-    while(IndxPtr->next != NULL)                // iterates til the tail node of the LList
+    while(IndxPtr != NULL)                // iterates til the tail node of the LList
     {                                           //
         IndxPtr = IndxPtr->next;                //
     }                                           //
