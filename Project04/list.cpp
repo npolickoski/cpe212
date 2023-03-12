@@ -64,7 +64,11 @@ void List::Append(string newword)
     
     if (IndxPtr == NULL)
     {
-        cout << "Yes";
+        cout << IndxPtr;
+    }
+    else
+    {
+        cout << IndxPtr->word << endl << IndxPtr->next << endl << IndxPtr;
     }
 
     while(IndxPtr != NULL)                      // iterates til the tail node of the LList
