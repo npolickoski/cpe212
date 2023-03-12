@@ -5,7 +5,7 @@
 
 List::List()
 {
-    head = new Node;
+    head = NULL;
     cout << head;                                // initalizing first node in the LList
     //num = 0;                                     
 }
