@@ -36,7 +36,7 @@ List::~List()
 
     if (head != NULL)
     {
-        Node* TempPtr = new Node;
+        Node* TempPtr;
 
         while(TempPtr->next != NULL)            // iterates through every node until the next node pointed to points to NULL
         {
@@ -55,10 +55,10 @@ List::~List()
 
 void List::Append(string newword)
 {
-    Node* TempPtr = new Node;
+    Node* TempPtr;
     Node* IndxPtr = head;
 
-    while(IndxPtr != NULL)                // iterates til the tail node of the LList
+    while(IndxPtr != NULL)                      // iterates til the tail node of the LList
     {                                           //
         IndxPtr = IndxPtr->next;                //
     }                                           //
@@ -84,8 +84,8 @@ void List::InsertAt(int pos, string newword)
         return;
     }
 
-    Node* CrtPtr = new Node;
-    Node* AftPtr = new Node;
+    Node* CrtPtr;
+    Node* AftPtr;
 
     if (pos < Length())                         // condition for when the postion to add new node is within the length of the LList
     {
@@ -165,7 +165,7 @@ void List::Replace(string oldword, string newword)
 int List::Length() const
 {
     int num = 0;
-    Node* TempPtr = new Node;
+    Node* TempPtr;
 
     if (head == NULL)                           // condition for when there are no nodes
     {
