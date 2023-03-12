@@ -64,7 +64,7 @@ void List::Append(string newword)
     
     if (IndxPtr == NULL)
     {
-        cout << IndxPtr;
+        cout << IndxPtr << " :)";
     }
     else
     {
