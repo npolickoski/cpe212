@@ -124,7 +124,7 @@ void List::Replace(string oldword, string newword)
 
     if (CrtPtr == NULL)
     {
-        throw ListNotFound;
+        throw ListNotFound();
     }
 
     CrtPtr->word = newword;
