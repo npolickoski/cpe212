@@ -86,49 +86,48 @@ void List::InsertAt(int pos, string newword)
 
 void List::Delete(string someword)
 {
-    if (!(Find(someword)))                      // exception handling for when desired word to delete is not found
+    Node* CrtPtr = head;
+    Node* BfrPtr = NULL;
+
+    while ((CrtPtr != NULL) && (CrtPtr->word != someword))
+    {
+        BfrPtr = CrtPtr;
+        CrtPtr = CrtPtr->word;
+    }
+
+    if (CrtPtr == NULL)
     {
         throw ListNotFound();
-        return;
     }
-    
-    Node* TempPtr = NULL;
-    Node* IndxPtr = head;
 
-    while(IndxPtr->word != someword)            // interates through all nodes for exact data match
+    if (BfrPtr == NULL)
     {
-        TempPtr = IndxPtr;                      // must keep copy of previous node (k-1)
-        IndxPtr = IndxPtr->next;                // iterates to next node in LList
+        head = CrtPtr->next;
     }
-    
-    TempPtr->next = IndxPtr->next;              // once data is found, pointer to the node that contains said data is 
-    delete IndxPtr;                             //      rerouted to node after said and thus deleted 
-                                                // Ex: "k-1 -> k -> k+1" is now "k-1 -> k+1; k is deleted"    
-    return;
+    else
+    {
+        BfrPtr->next = CrtPtr->next;
+    }
+
+    delete CrtPtr;
 }
 
 
 void List::Replace(string oldword, string newword)
 {
-    if (!(Find(oldword)))                       // exception handeled for when data to replace is not in LList
+    Node* CrtPtr = head;
+
+    while((CrtPtr != NULL) && (CrtPtr->word != oldword))
     {
-        throw ListNotFound();
-        return;
+        CrtPtr = CrtPtr->next;
     }
 
-    Node* IndxPtr = head;
-
-    while(IndxPtr->word != oldword)             // iterates through all nodes until desired data is found
+    if (CrtPtr == NULL)
     {
-        IndxPtr = IndxPtr->next;
+        throw ListNotFound
     }
 
-    if (IndxPtr->word == oldword)               // assigns new data to node
-    {
-        IndxPtr->word = newword;
-    }
-
-    return;
+    CrtPtr->word = newword;
 }
 
 
