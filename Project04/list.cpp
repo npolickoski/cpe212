@@ -92,7 +92,7 @@ void List::Delete(string someword)
     while ((CrtPtr != NULL) && (CrtPtr->word != someword))
     {
         BfrPtr = CrtPtr;
-        CrtPtr = CrtPtr->word;
+        CrtPtr = CrtPtr->next;
     }
 
     if (CrtPtr == NULL)
@@ -124,7 +124,7 @@ void List::Replace(string oldword, string newword)
 
     if (CrtPtr == NULL)
     {
-        throw ListNotFound
+        throw ListNotFound;
     }
 
     CrtPtr->word = newword;
