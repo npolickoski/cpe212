@@ -120,7 +120,7 @@ void BSTree<SomeType>::CopyTree(BSTreeNode<SomeType>*& copy, const BSTreeNode<So
     }
     else
     {
-        copy = new BSTreeNode<SomeType>*;
+        copy = new BSTreeNode<SomeType>;
         copy->data = originalTree->data;
 
         CopyTree(copy->leftPtr, originalTree->leftPtr);
@@ -271,7 +271,7 @@ void BSTree<SomeType>::operator=(const BSTree<SomeType>& originalTree)
         return;
     }
     
-    Destory(rootPtr);
+    Destroy(rootPtr);
     CopyTree(rootPtr, originalTree.rootPtr);
 }
 
