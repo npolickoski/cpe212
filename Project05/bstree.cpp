@@ -192,55 +192,27 @@ int BSTree<SomeType>::FindLevel(BSTreeNode<SomeType>* treePtr, SomeType item) co
 // Recursive function that traverses the tree looking for item and returns the level where
 // item was found
 {
-    static int itemLvl = 0;                 // final total # of levels
-    static int crtLvl = 0;                  // count iterator
+    static int itemLvl = 0;                         // final total # of levels
 
-    crtLvl++;
-
-    if (treePtr != NULL)
+    if (treePtr == NULL)
     {
-        if (item < treePtr->data)               // goes to the left
-        {
-            if (crtLvl > itemLvl)
-            {
-                itemLvl = crtLvl;
-            }
-
-            FindLevel(treePtr->leftPtr, item);
-        }
-        else if (item > treePtr->data)          // goes to the right
-        {
-            if (crtLvl > itemLvl)
-            {
-                itemLvl = crtLvl;
-            }
-
-            FindLevel(treePtr->rightPtr, item);
-        }
-        else if (item == treePtr->data)
-        {
-            return itemLvl;
-        }
-        else
-        {
-            throw NotFoundBSTree();
-        }
+        throw NotNotFoundBSTree();
     }
 
-    // if (item != treePtr->data)
-    // {
-    //     if (crtLvl > itemLvl)
-    //     {
-    //         itemLvl = crtLvl;
-    //     }
-
-    //     FindLevel(treePtr->leftPtr, item);
-    //     FindLevel(treePtr->rightPtr, item);
-    // }
-
-    crtLvl--;
-
-    return itemLvl;
+    if (item == treePtr->data)
+    {
+        return itemLvl;
+    }
+    else if (item < treePtr->data)
+    {
+        itemLvl++;
+        return FindLevel(treePtr->leftPtr, item);
+    }
+    else if (item > treePtr->data)
+    {
+        itemLvl++;
+        return FindLevel(treePtr->rightPtr, item);
+    }
 }
 
 
@@ -289,9 +261,20 @@ void BSTree<SomeType>::InsertItem(SomeType item)
 // Inserts item into BSTree;  if tree already full, throws FullBSTree exception
 // If item is already in BSTree, throw FoundInBSTree exception
 {
-    Insert(rootPtr, item);
+    if (IsFull())
+    {
+        throw FullBSTree();
+    }   
 
-    return;
+    try
+    {
+        Insert(rootPtr, item);
+        return;
+    }
+    catch(const FoundInBSTree& e)
+    {
+        throw e;
+    }
 }
 
 
@@ -306,9 +289,15 @@ SomeType BSTree<SomeType>::DeleteItem(SomeType item)
         throw EmptyBSTree();
     }
 
-    Delete(rootPtr, item);
-
-    return item;
+    try
+    {
+        Delete(rootPtr, item);
+        return item;
+    }
+    catch(const NotFoundBSTree& e)
+    {
+        throw e;
+    }    
 }
 
 
@@ -414,24 +403,18 @@ int BSTree<SomeType>::Level(SomeType item) const
 // If tree is empty, throws EmptyBSTree
 // If tree is not empty and item is not found, throws NotFoundBSTree
 {
-    if (!(IsEmpty()))
-    {
-        BSTreeNode<SomeType>* tempPtr = rootPtr;
-
-        if (item != tempPtr->data)
-        {
-
-        }
-        else
-        {
-            throw NotFoundBSTree();
-        }
-    }
-    else
+    if (IsEmpty())
     {
         throw EmptyBSTree();
     }
 
-    return FindLevel(rootPtr, item);
+    try
+    {
+        return FindLevel(rootPtr, item);
+    }
+    catch (const NotFoundBSTree& e)
+    {
+        throw e;
+    }
 }
 
