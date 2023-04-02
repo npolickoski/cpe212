@@ -196,7 +196,7 @@ int BSTree<SomeType>::FindLevel(BSTreeNode<SomeType>* treePtr, SomeType item) co
 
     if (treePtr == NULL)
     {
-        throw NotNotFoundBSTree();
+        throw NotFoundBSTree();
     }
 
     if (item == treePtr->data)
