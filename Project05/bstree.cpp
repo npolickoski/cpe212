@@ -342,7 +342,7 @@ bool BSTree<SomeType>::IsFull() const
         location = new BSTreeNode<SomeType>;
         delete location;
 
-        return false
+        return false;
     }
     catch(std::bad_alloc)
     {
