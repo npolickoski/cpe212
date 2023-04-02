@@ -20,7 +20,7 @@ class FullBSTree  						// Exception class models full BSTree condition
 	/* No code here */
 };
 
-class EmptyBSTree						// Exception class models empty BSTree condition
+class EmptyBSTree						  // Exception class models empty BSTree condition
 {
 	/* No code here */
 };
@@ -30,7 +30,7 @@ class NotFoundBSTree					// Exception class models not found in BSTree condition
 	/* No code here */
 };
 
-class FoundInBSTree                     // Exception class models found in BSTree condition
+class FoundInBSTree           // Exception class models found in BSTree condition
 {
 	/* No code here */
 };
