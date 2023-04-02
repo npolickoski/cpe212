@@ -246,6 +246,7 @@ int BSTree<SomeType>::FindLevel(BSTreeNode<SomeType>* treePtr, SomeType item) co
 
 //// Public Methods /////
 
+template <typename SomeType>
 BSTree<SomeType>::BSTree()
 // Default constructor initializes root pointer to NULL
 {  
@@ -275,6 +276,7 @@ void BSTree<SomeType>::operator=(const BSTree<SomeType>& originalTree)
 }
 
 
+template <typename SomeType>
 BSTree<SomeType>::~BSTree()
 // Destructor deallocates all tree nodes
 {
@@ -310,6 +312,7 @@ SomeType BSTree<SomeType>::DeleteItem(SomeType item)
 }
 
 
+template <typename SomeType>
 void BSTree<SomeType>::MakeEmpty()
 // Deallocates all BSTree nodes and sets root pointer to NULL
 {
@@ -320,6 +323,7 @@ void BSTree<SomeType>::MakeEmpty()
 }
 
 
+template <typename SomeType>
 int BSTree<SomeType>::Size() const
 // Returns total number of data values stored in tree
 {
@@ -347,6 +351,7 @@ bool BSTree<SomeType>::IsFull() const
 }
 
 
+template <typename SomeType>
 bool BSTree<SomeType>::IsEmpty() const
 // Returns true if BSTree is empty; returns false otherwise
 {
