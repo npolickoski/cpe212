@@ -178,26 +178,6 @@ int BSTree<SomeType>::LevelCount(BSTreeNode<SomeType>* treePtr) const
 
         return std::max(leftHeight, rightHeight) + 1;
     }
-
-    // static int maxLvl = 0;
-    // static int lvlItr = 0;                      // total number of levels (iterator) (initalizes at 0)
-
-    // lvlItr++;
-
-    // if (treePtr != NULL)
-    // {
-    //     if (lvlItr > maxLvl)
-    //     {
-    //         maxLvl = lvlItr;
-    //     }
-
-    //     LevelCount(treePtr->leftPtr);
-    //     LevelCount(treePtr->rightPtr);
-    // }
-
-    // lvlItr--;
-
-    // return maxLvl;
 }
 
 
@@ -206,27 +186,62 @@ int BSTree<SomeType>::FindLevel(BSTreeNode<SomeType>* treePtr, SomeType item) co
 // Recursive function that traverses the tree looking for item and returns the level where
 // item was found
 {
-    static int itemLvl = 0;                         // final total # of levels
-
     if (treePtr == NULL)
     {
         throw NotFoundBSTree();
     }
-
-    if (item == treePtr->data)
+    else if (item == treePtr->data) 
     {
-        return itemLvl;
-    }
-    else if (item < treePtr->data)
+        return 1;
+    } 
+    else if (item < treePtr->data) 
     {
-        itemLvl++;
-        return FindLevel(treePtr->leftPtr, item);
+        int leftLevel = FindLevel(treePtr->leftPtr, item);
+        
+        if (leftLevel == -1) 
+        {
+            return -1;
+        } 
+        else
+        {
+            return leftLevel + 1;
+        }
     }
     else if (item > treePtr->data)
     {
-        itemLvl++;
-        return FindLevel(treePtr->rightPtr, item);
+        int rightLevel = FindLevel(treePtr->rightPtr, item);
+
+        if (rightLevel == -1) 
+        {
+            return -1;
+        } 
+        else 
+        {
+            return rightLevel + 1;
+        }
     }
+    
+    // static int itemLvl = 0;                         // final total # of levels
+
+    // if (treePtr == NULL)
+    // {
+    //     throw NotFoundBSTree();
+    // }
+
+    // if (item == treePtr->data)
+    // {
+    //     return itemLvl;
+    // }
+    // else if (item < treePtr->data)
+    // {
+    //     itemLvl++;
+    //     return FindLevel(treePtr->leftPtr, item);
+    // }
+    // else if (item > treePtr->data)
+    // {
+    //     itemLvl++;
+    //     return FindLevel(treePtr->rightPtr, item);
+    //}
 }
 
 
