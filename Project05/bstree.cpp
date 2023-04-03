@@ -51,11 +51,13 @@ void BSTree<SomeType>::DeleteNode(BSTreeNode<SomeType>*& treePtr)
     {
         treePtr = treePtr->rightPtr;
         delete tempPtr;
+        tempPtr = NULL;
     }
     else if (treePtr->rightPtr == NULL)                             // 1 child (right)
     {
         treePtr = treePtr->leftPtr;
         delete tempPtr;
+        tempPtr = NULL;
     }
     else                                                            // 2 children
     {
