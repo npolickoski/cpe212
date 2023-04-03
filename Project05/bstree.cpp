@@ -1,7 +1,7 @@
 
 #include <iostream>
 #include <new>
-#include "bstree.h"
+//#include "bstree.h"
 
 
 //// Private Methods ////
@@ -41,22 +41,23 @@ void BSTree<SomeType>::DeleteNode(BSTreeNode<SomeType>*& treePtr)
 {
     SomeType info;
     BSTreeNode<SomeType>* tempPtr = treePtr;
-    
-    if ((treePtr->leftPtr == NULL) && (treePtr->rightPtr == NULL))
+
+    if ((treePtr->leftPtr == NULL) && (treePtr->rightPtr == NULL)) // leaf node (no children)
     {
-        delete tempPtr;
+        delete treePtr;
+        treePtr = NULL;
     }
-    else if (treePtr->leftPtr == NULL)
+    else if (treePtr->leftPtr == NULL)                             // 1 child (left)
     {
         treePtr = treePtr->rightPtr;
         delete tempPtr;
     }
-    else if (treePtr->rightPtr == NULL)
+    else if (treePtr->rightPtr == NULL)                             // 1 child (right)
     {
         treePtr = treePtr->leftPtr;
         delete tempPtr;
     }
-    else
+    else                                                            // 2 children
     {
         info = GetPredecessor(treePtr->leftPtr);
         treePtr->data = info;

@@ -7,7 +7,7 @@ CC = g++
 project05: main.o  student.o
 	$(CC)  main.o student.o  -o project05
 
-main.o: main.cpp bstree.h
+main.o: main.cpp bstree.cpp
 	$(CC) -c main.cpp
 
 student.o: student.cpp student.h
