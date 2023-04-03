@@ -11,7 +11,7 @@ void BSTree<SomeType>::Delete(BSTreeNode<SomeType>*& treePtr, SomeType& item)
 // Once located, DeleteNode is invoked to remove the value from the tree
 // If tree is not empty and item is NOT present, throw NotFoundBSTree
 {
-    if (!(IsEmpty()))
+    if (treePtr != NULL)
     {
         if (item < treePtr->data)
         {
@@ -76,7 +76,7 @@ void BSTree<SomeType>::DeleteNode(BSTreeNode<SomeType>*& treePtr)
             
         }
     }
-    
+
     return;
 }
 
