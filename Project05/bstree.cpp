@@ -42,21 +42,21 @@ void BSTree<SomeType>::DeleteNode(BSTreeNode<SomeType>*& treePtr)
     SomeType info;
     BSTreeNode<SomeType>* tempPtr = treePtr;
 
-    if (tempPtr->leftPtr == NULL)
+    if (treePtr->leftPtr == NULL)
     {
-        tempPtr = tempPtr->rightPtr;
+        treePtr = treePtr->rightPtr;
         delete tempPtr;
     }
-    else if (tempPtr->rightPtr == NULL)
+    else if (treePtr->rightPtr == NULL)
     {
-        tempPtr = tempPtr->leftPtr;
+        treePtr = treePtr->leftPtr;
         delete tempPtr;
     }
     else
     {
-        info = GetPredecessor(tempPtr->leftPtr);
-        tempPtr->data = info;
-        Delete(tempPtr->rightPtr, info);
+        info = GetPredecessor(treePtr->leftPtr);
+        treePtr->data = info;
+        Delete(treePtr->rightPtr, info);
     }
 
     return;
