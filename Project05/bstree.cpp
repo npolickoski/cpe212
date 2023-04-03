@@ -72,8 +72,7 @@ void BSTree<SomeType>::DeleteNode(BSTreeNode<SomeType>*& treePtr)
             catch(const EmptyBSTree& e)
             {
                 throw e;
-            }
-            
+            } 
         }
     }
 
@@ -152,17 +151,14 @@ SomeType BSTree<SomeType>::GetPredecessor(BSTreeNode<SomeType>* treePtr) const
 // Finds the largest data value in the tree pointed to by treePtr and returns that data value
 // as the functions return value
 {
-    if (treePtr == NULL)
+    if (treePtr->rightPtr == NULL)
     {
-        throw EmptyBSTree();
+        return treePtr->data;
     }
-
-    while (treePtr->rightPtr != NULL)
+    else
     {
-        treePtr = treePtr->rightPtr;
+        return GetPredecessor(treePtr->rightPtr);
     }
-
-    return treePtr->data;
 }
 
 
@@ -401,16 +397,9 @@ SomeType BSTree<SomeType>::Max() const
     {
         throw EmptyBSTree();
     }
-
-    try
+    else
     {
-        BSTreeNode<SomeType>* tempPtr = rootPtr;
-
-        return GetPredecessor(tempPtr);
-    }
-    catch(const EmptyBSTree& e)
-    {
-        throw e;
+        return GetPredecessor(rootPtr);
     }
     
 }
