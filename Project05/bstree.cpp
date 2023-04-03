@@ -192,7 +192,7 @@ int BSTree<SomeType>::FindLevel(BSTreeNode<SomeType>* treePtr, SomeType item) co
     }
     else if (item == treePtr->data) 
     {
-        return 1;
+        return 0;
     } 
     else if (item < treePtr->data) 
     {
@@ -220,7 +220,7 @@ int BSTree<SomeType>::FindLevel(BSTreeNode<SomeType>* treePtr, SomeType item) co
             return rightLevel + 1;
         }
     }
-    
+
     // static int itemLvl = 0;                         // final total # of levels
 
     // if (treePtr == NULL)
