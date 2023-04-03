@@ -4,7 +4,7 @@
 #include "bstree.h"
 
 
-// Private Methods
+//// Private Methods ////
 template <typename SomeType>
 void BSTree<SomeType>::Delete(BSTreeNode<SomeType>*& treePtr, SomeType& item)
 // Recursive function that traverses the tree starting at treePtr to locate the data value to be removed
@@ -73,8 +73,6 @@ void BSTree<SomeType>::Insert(BSTreeNode<SomeType>*& ptr, SomeType item)
 // Recursive function that finds the correct position of item and adds it to the tree
 // Throws FoundInBSTree if item is already in the tree
 {
-    static BSTreeNode<SomeType>* BfrPtr;
-
     if (ptr == NULL)
     {
         ptr = new BSTreeNode<SomeType>;
@@ -169,25 +167,37 @@ template <typename SomeType>
 int BSTree<SomeType>::LevelCount(BSTreeNode<SomeType>* treePtr) const
 // Recursive function that traverses the entire tree to determine the total number of levels in the tree
 {
-    static int maxLvl = 0;
-    static int lvlItr = 0;                      // total number of levels (iterator) (initalizes at 0)
-
-    lvlItr++;
-
-    if (treePtr != NULL)
+    if (treePtr == NULL) 
     {
-        if (lvlItr > maxLvl)
-        {
-            maxLvl = lvlItr;
-        }
+        return 0;
+    } 
+    else 
+    {
+        int leftHeight = LevelCount(treePtr->left);
+        int rightHeight = LevelCount(treePtr->right);
 
-        LevelCount(treePtr->leftPtr);
-        LevelCount(treePtr->rightPtr);
+        return std::max(leftHeight, rightHeight) + 1;
     }
 
-    lvlItr--;
+    // static int maxLvl = 0;
+    // static int lvlItr = 0;                      // total number of levels (iterator) (initalizes at 0)
 
-    return maxLvl;
+    // lvlItr++;
+
+    // if (treePtr != NULL)
+    // {
+    //     if (lvlItr > maxLvl)
+    //     {
+    //         maxLvl = lvlItr;
+    //     }
+
+    //     LevelCount(treePtr->leftPtr);
+    //     LevelCount(treePtr->rightPtr);
+    // }
+
+    // lvlItr--;
+
+    // return maxLvl;
 }
 
 
@@ -221,7 +231,6 @@ int BSTree<SomeType>::FindLevel(BSTreeNode<SomeType>* treePtr, SomeType item) co
 
 
 //// Public Methods /////
-
 template <typename SomeType>
 BSTree<SomeType>::BSTree()
 // Default constructor initializes root pointer to NULL
