@@ -40,7 +40,7 @@ void BSTree<SomeType>::DeleteNode(BSTreeNode<SomeType>*& treePtr)
 // Removes the node pointed to by treePtr from the tree
 {
     SomeType info;
-    BSTreeNode<SomeType>* tempPtr = &treePtr;
+    BSTreeNode<SomeType>* tempPtr = treePtr;
 
     if ((treePtr->leftPtr == NULL) && (treePtr->rightPtr == NULL)) // leaf node (no children)
     {
