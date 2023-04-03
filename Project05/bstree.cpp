@@ -44,27 +44,31 @@ template <typename SomeType>
 void BSTree<SomeType>::DeleteNode(BSTreeNode<SomeType>*& treePtr)
 // Removes the node pointed to by treePtr from the tree
 {
-    SomeType info;
-    BSTreeNode<SomeType>* tempPtr = treePtr;
+    delete treePtr;
 
-    if (treePtr->leftPtr == NULL)
-    {
-        treePtr = treePtr->rightPtr;
-        delete tempPtr;
-    }
-    else if (treePtr->rightPtr == NULL)
-    {
-        treePtr = treePtr->leftPtr;
-        delete tempPtr;
-    }
-    else
-    {
-        info = GetPredecessor(treePtr->leftPtr);
-        treePtr->data = info;
-        Delete(treePtr->rightPtr, info);
-    }
 
-    return;
+
+    // SomeType info;
+    // BSTreeNode<SomeType>* tempPtr = treePtr;
+
+    // if (treePtr->leftPtr == NULL)
+    // {
+    //     treePtr = treePtr->rightPtr;
+    //     delete tempPtr;
+    // }
+    // else if (treePtr->rightPtr == NULL)
+    // {
+    //     treePtr = treePtr->leftPtr;
+    //     delete tempPtr;
+    // }
+    // else
+    // {
+    //     info = GetPredecessor(treePtr->leftPtr);
+    //     treePtr->data = info;
+    //     Delete(treePtr->rightPtr, info);
+    // }
+
+    // return;
 }
 
 
@@ -158,7 +162,7 @@ int BSTree<SomeType>::CountNodes(BSTreeNode<SomeType>* treePtr) const
     }
     else
     {
-        return (CountNodes(treePtr->leftPtr) + CountNodes(treePtr->rightPtr) + 1);
+        return (/*CountNodes(treePtr->leftPtr) +*/ CountNodes(treePtr->rightPtr) + 1);
     }
 }
 
