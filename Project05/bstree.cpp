@@ -230,7 +230,7 @@ template <typename SomeType>
 BSTree<SomeType>::BSTree(const BSTree<SomeType>& someTree)
 // Copy constructor for BSTree
 {
-    CopyTree(someTree, rootPtr);
+    CopyTree(rootPtr, someTree.rootPtr);
 }
 
 
@@ -243,8 +243,8 @@ void BSTree<SomeType>::operator=(const BSTree<SomeType>& originalTree)
         return;
     }
     
-    Destroy(rootPtr);
-    CopyTree(rootPtr, originalTree.rootPtr);
+    ~BSTree();
+    BSTree(originalTree);
 }
 
 
