@@ -27,14 +27,14 @@ void BSTree<SomeType>::Delete(BSTreeNode<SomeType>*& treePtr, SomeType& item)
             BSTreeNode<SomeType>* tempPtr = treePtr->rightPtr;
             DeleteNode(treePtr);
 
-            return tempPtr;
+            return;
         }
         else if (treePtr->rightPtr == NULL)
         {
             BSTreeNode<SomeType>* tempPtr = treePtr->leftPtr;
             DeleteNode(treePtr);
 
-            return tempPtr;
+            return;
         }
         else
         {
@@ -46,19 +46,19 @@ void BSTree<SomeType>::Delete(BSTreeNode<SomeType>*& treePtr, SomeType& item)
             }
 
             tempPtr->data = treePtr->data;
-            tempPtr->rightPtr = Delete(tempPtr->rightPtr, treePtr->data);
-            return tempPtr;
+            Delete(tempPtr->rightPtr, treePtr->data);
+            return;
         }
     }
     else if (item < treePtr->data)
     {
-        treePtr->leftPtr = Delete(treePtr->leftPtr, item);
-        return treePtr;
+        Delete(treePtr->leftPtr, item);
+        return;
     }
     else
     {
-        treePtr->rightPtr = Delete(treePtr->rightPtr, item);
-        return treePtr; 
+        Delete(treePtr->rightPtr, item);
+        return; 
     }
 
     // if (!(IsEmpty()))
