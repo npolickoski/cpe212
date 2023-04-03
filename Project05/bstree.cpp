@@ -158,7 +158,7 @@ int BSTree<SomeType>::CountNodes(BSTreeNode<SomeType>* treePtr) const
     }
     else
     {
-        return (CountNodes(treePtr->leftPtr) + CountNodes(treePtr->rightPtr) + 1);
+        return (CountNodes(treePtr->leftPtr) + CountNodes(treePtr->rightPtr));
     }
 }
 
@@ -220,28 +220,6 @@ int BSTree<SomeType>::FindLevel(BSTreeNode<SomeType>* treePtr, SomeType item) co
             return rightLevel + 1;
         }
     }
-
-    // static int itemLvl = 0;                         // final total # of levels
-
-    // if (treePtr == NULL)
-    // {
-    //     throw NotFoundBSTree();
-    // }
-
-    // if (item == treePtr->data)
-    // {
-    //     return itemLvl;
-    // }
-    // else if (item < treePtr->data)
-    // {
-    //     itemLvl++;
-    //     return FindLevel(treePtr->leftPtr, item);
-    // }
-    // else if (item > treePtr->data)
-    // {
-    //     itemLvl++;
-    //     return FindLevel(treePtr->rightPtr, item);
-    //}
 }
 
 
