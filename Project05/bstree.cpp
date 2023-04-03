@@ -13,30 +13,75 @@ void BSTree<SomeType>::Delete(BSTreeNode<SomeType>*& treePtr, SomeType& item)
 {
     if (treePtr == NULL)
     {
-        return;
+        throw NotFoundBSTree();
     }
-
-    if (!(IsEmpty()))
+    else if (item == treePtr->data)
     {
-        if (item < treePtr->data)
-        {
-            Delete(treePtr->leftPtr, item);
-        }
-        else if (item > treePtr->data)
-        {
-            Delete(treePtr->rightPtr, item);
-        }
-        else if (item == treePtr->data)
+        if ((treePtr->leftPtr == NULL) && (treePtr->rightPtr == NULL))
         {
             DeleteNode(treePtr);
+            return;
+        }
+        else if (treePtr->leftPtr == NULL)
+        {
+            BSTreeNode<SomeType>* tempPtr = treePtr->rightPtr;
+            DeleteNode(treePtr);
+
+            return tempPtr;
+        }
+        else if (treePtr->rightPtr == NULL)
+        {
+            BSTreeNode<SomeType>* tempPtr = treePtr->leftPtr;
+            DeleteNode(treePtr);
+
+            return tempPtr;
         }
         else
         {
-            throw NotFoundBSTree();
+            BSTreeNode<SomeType>* tempPtr = treePtr->rightPtr;
+
+            while (tempPtr->leftPtr != NULL)
+            {
+                tempPtr = tempPtr->leftPtr;
+            }
+
+            tempPtr->data = treePtr->data;
+            tempPtr->rightPtr = Delete(tempPtr->rightPtr, treePtr->data);
+            return tempPtr;
         }
     }
+    else if (item < treePtr->data)
+    {
+        treePtr->leftPtr = Delete(treePtr->leftPtr, item);
+        return treePtr;
+    }
+    else
+    {
+        treePtr->rightPtr = Delete(treePtr->rightPtr, item);
+        return treePtr; 
+    }
 
-    return;
+    // if (!(IsEmpty()))
+    // {
+    //     if (item < treePtr->data)
+    //     {
+    //         Delete(treePtr->leftPtr, item);
+    //     }
+    //     else if (item > treePtr->data)
+    //     {
+    //         Delete(treePtr->rightPtr, item);
+    //     }
+    //     else if (item == treePtr->data)
+    //     {
+    //         DeleteNode(treePtr);
+    //     }
+    //     else
+    //     {
+    //         throw NotFoundBSTree();
+    //     }
+    // }
+
+    // return;
 }
 
 
@@ -45,8 +90,6 @@ void BSTree<SomeType>::DeleteNode(BSTreeNode<SomeType>*& treePtr)
 // Removes the node pointed to by treePtr from the tree
 {
     delete treePtr;
-
-
 
     // SomeType info;
     // BSTreeNode<SomeType>* tempPtr = treePtr;
@@ -162,7 +205,7 @@ int BSTree<SomeType>::CountNodes(BSTreeNode<SomeType>* treePtr) const
     }
     else
     {
-        return (/*CountNodes(treePtr->leftPtr) +*/ CountNodes(treePtr->rightPtr) + 1);
+        return (CountNodes(treePtr->leftPtr) + CountNodes(treePtr->rightPtr) + 1);
     }
 }
 
