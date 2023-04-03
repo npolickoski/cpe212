@@ -243,8 +243,8 @@ void BSTree<SomeType>::operator=(const BSTree<SomeType>& originalTree)
         return;
     }
     
-    ~BSTree();
-    BSTree(originalTree);
+    Destroy(rootPtr);
+    CopyTree(rootPtr, originalTree.rootPtr);
 }
 
 
