@@ -158,7 +158,7 @@ int BSTree<SomeType>::CountNodes(BSTreeNode<SomeType>* treePtr) const
     }
     else
     {
-        return (CountNodes(treePtr->leftPtr) + CountNodes(treePtr->rightPtr));
+        return (CountNodes(treePtr->leftPtr) + CountNodes(treePtr->rightPtr) + 1);
     }
 }
 
