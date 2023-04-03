@@ -70,6 +70,7 @@ void BSTree<SomeType>::DeleteNode(BSTreeNode<SomeType>*& treePtr)
 }
 
 
+
 template <typename SomeType>
 void BSTree<SomeType>::Insert(BSTreeNode<SomeType>*& ptr, SomeType item)
 // Recursive function that finds the correct position of item and adds it to the tree
