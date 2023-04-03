@@ -40,24 +40,23 @@ void BSTree<SomeType>::DeleteNode(BSTreeNode<SomeType>*& treePtr)
 // Removes the node pointed to by treePtr from the tree
 {
     SomeType info;
-    BSTreeNode<SomeType>* tempPtr;
+    BSTreeNode<SomeType>* tempPtr = treePtr;
 
-    tempPtr = treePtr;
-    if (treePtr->leftPtr == NULL)
+    if (tempPtr->leftPtr == NULL)
     {
-        treePtr = treePtr->rightPtr;
+        tempPtr = tempPtr->rightPtr;
         delete tempPtr;
     }
-    else if (treePtr->rightPtr == NULL)
+    else if (tempPtr->rightPtr == NULL)
     {
-        treePtr = treePtr->leftPtr;
+        tempPtr = tempPtr->leftPtr;
         delete tempPtr;
     }
     else
     {
-        info = GetPredecessor(treePtr->leftPtr);
-        treePtr->data = info;
-        Delete(treePtr->rightPtr, info);
+        info = GetPredecessor(tempPtr->leftPtr);
+        tempPtr->data = info;
+        Delete(tempPtr->rightPtr, info);
     }
 
     return;
