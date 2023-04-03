@@ -11,27 +11,26 @@ void BSTree<SomeType>::Delete(BSTreeNode<SomeType>*& treePtr, SomeType& item)
 // Once located, DeleteNode is invoked to remove the value from the tree
 // If tree is not empty and item is NOT present, throw NotFoundBSTree
 {
-    if (treePtr != NULL)
+    if (treePtr == NULL)
     {
-        if (item < treePtr->data)
-        {
-            Delete(treePtr->leftPtr, item);
-        }
-        else if (item > treePtr->data)
-        {
-            Delete(treePtr->rightPtr, item);
-        }
-        else if (item == treePtr->data)
-        {
-            DeleteNode(treePtr);
-        }
-        else
-        {
-            throw NotFoundBSTree();
-        }
+        return;
     }
-
-    return;
+    else if (item == treePtr->data)
+    {
+        DeleteNode(treePtr);
+    }
+    else if (item < treePtr->data)
+    {
+        Delete(treePtr->leftPtr, item);
+    }
+    else if (item > treePtr->data)
+    {
+        Delete(treePtr->rightPtr, item);
+    }
+    else
+    {
+        throw NotFoundBSTree();
+    }
 }
 
 
@@ -39,42 +38,85 @@ template <typename SomeType>
 void BSTree<SomeType>::DeleteNode(BSTreeNode<SomeType>*& treePtr)
 // Removes the node pointed to by treePtr from the tree
 {
-    if (treePtr != NULL)
-    {
-        SomeType info;
-        BSTreeNode<SomeType>* tempPtr = treePtr;
+    // BSTreeNode<SomeType>* parent = NULL; // parent node
+    // bool isLeftChild = false;            // flag if node is left child
 
-        if ((treePtr->leftPtr == NULL) && (treePtr->rightPtr == NULL)) // leaf node (no children)
-        {
-            delete treePtr;
-            treePtr = NULL;
-        }
-        else if (treePtr->leftPtr == NULL)                             // 1 child (left)
-        {
-            treePtr = treePtr->rightPtr;
-            delete tempPtr;
-            tempPtr = NULL;
-        }
-        else if (treePtr->rightPtr == NULL)                             // 1 child (right)
-        {
-            treePtr = treePtr->leftPtr;
-            delete tempPtr;
-            tempPtr = NULL;
-        }
-        else                                                            // 2 children
-        {
-            try
-            {
-                info = GetPredecessor(treePtr->leftPtr);
-                treePtr->data = info;
-                Delete(treePtr->rightPtr, info);
-            }
-            catch(const EmptyBSTree& e)
-            {
-                throw e;
-            } 
-        }
+
+    // // Find parent node & whether node is a left/right child
+    // BSTreeNode<SomeType>* tempPtr = rootPtr;
+
+    // while (tempPtr != treePtr)
+    // {
+    //     parent = tempPtr;
+
+    //     if (treePtr->data < tempPtr->data)
+    //     {
+    //         tempPtr = tempPtr->leftPtr;
+    //         isLeftChild = true;
+    //     }
+    //     else
+    //     {
+    //         tempPtr = tempPtr->rightPtr;
+    //         isLeftChild = false;
+    //     }
+    // }
+
+
+    // // Case #1: node has 0 children
+    // if ((treePtr->leftPtr == NULL) && (treePtr->rightPtr == NULL))
+    // {
+    //     if (treePtr == rootPtr)
+    //     {
+    //         rootPtr = NULL;
+    //     }
+    //     else if (isLeftChild)
+    //     {
+    //         parent->leftPtr = NULL;
+    //     }
+    //     else
+    //     {
+    //         parent->rightPtr = NULL;
+    //     }
+
+    //     delete treePtr;
+    // }
+
+
+    // // Case #2: node has 1 child
+    // else if ((treePtr->leftPtr == NULL) || (treePtr->rightPtr == NULL))
+    // {
+    //     BSTreeNode<SomeType>* child;
+
+    //     if (treePtr->leftPtr != NULL)
+    //     {
+    //         child = treePtr->leftPtr;
+    //     }
+    //     else
+    //     {
+    //         child = treePtr->rightPtr;
+    //     }
+    // }
+
+
+    BSTreeNode<SomeType>* childPtr = NULL;
+
+    if (treePtr->leftPtr == NULL)                             // 1 child (left)
+    {
+        childPtr = treePtr->rightPtr;
     }
+    else if (treePtr->rightPtr == NULL)                             // 1 child (right)
+    {
+        childPtr = treePtr->leftPtr;
+    }
+    else                                                            // 2 children
+    {
+        BSTreeNode<SomeType>* maxPtr = GetPredecessor(treePtr->leftPtr);
+        treePtr->data = maxPtr->data;
+        DeleteNode(maxPtr);
+    }
+
+    delete treePtr;
+    treePtr = childPtr;
 
     return;
 }
