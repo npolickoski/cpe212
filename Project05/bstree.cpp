@@ -39,46 +39,44 @@ template <typename SomeType>
 void BSTree<SomeType>::DeleteNode(BSTreeNode<SomeType>*& treePtr)
 // Removes the node pointed to by treePtr from the tree
 {
-    if (!(IsEmpty()))
+    if (treePtr != NULL)
     {
         SomeType info;
         BSTreeNode<SomeType>* tempPtr = treePtr;
 
-        if (treePtr != NULL)
+        if ((treePtr->leftPtr == NULL) && (treePtr->rightPtr == NULL)) // leaf node (no children)
         {
-            if ((treePtr->leftPtr == NULL) && (treePtr->rightPtr == NULL)) // leaf node (no children)
+            delete treePtr;
+            treePtr = NULL;
+        }
+        else if (treePtr->leftPtr == NULL)                             // 1 child (left)
+        {
+            treePtr = treePtr->rightPtr;
+            delete tempPtr;
+            tempPtr = NULL;
+        }
+        else if (treePtr->rightPtr == NULL)                             // 1 child (right)
+        {
+            treePtr = treePtr->leftPtr;
+            delete tempPtr;
+            tempPtr = NULL;
+        }
+        else                                                            // 2 children
+        {
+            try
             {
-                delete treePtr;
-                treePtr = NULL;
+                info = GetPredecessor(treePtr->leftPtr);
+                treePtr->data = info;
+                Delete(treePtr->rightPtr, info);
             }
-            else if (treePtr->leftPtr == NULL)                             // 1 child (left)
+            catch(const EmptyBSTree& e)
             {
-                treePtr = treePtr->rightPtr;
-                delete tempPtr;
-                tempPtr = NULL;
+                throw e;
             }
-            else if (treePtr->rightPtr == NULL)                             // 1 child (right)
-            {
-                treePtr = treePtr->leftPtr;
-                delete tempPtr;
-                tempPtr = NULL;
-            }
-            else                                                            // 2 children
-            {
-                try
-                {
-                    info = GetPredecessor(treePtr->leftPtr);
-                    treePtr->data = info;
-                    Delete(treePtr->rightPtr, info);
-                }
-                catch(const EmptyBSTree& e)
-                {
-                    throw e;
-                }
-                
-            }
+            
         }
     }
+    
     return;
 }
 
