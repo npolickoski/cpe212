@@ -173,8 +173,8 @@ int BSTree<SomeType>::LevelCount(BSTreeNode<SomeType>* treePtr) const
     } 
     else 
     {
-        int leftHeight = LevelCount(treePtr->left);
-        int rightHeight = LevelCount(treePtr->right);
+        int leftHeight = LevelCount(treePtr->leftPtr);
+        int rightHeight = LevelCount(treePtr->rightPtr);
 
         return std::max(leftHeight, rightHeight) + 1;
     }
