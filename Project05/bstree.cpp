@@ -30,7 +30,7 @@ void BSTree<SomeType>::Delete(BSTreeNode<SomeType>*& treePtr, SomeType& item)
             throw NotFoundBSTree();
         }
     }
-    
+
     return;
 }
 
@@ -41,8 +41,12 @@ void BSTree<SomeType>::DeleteNode(BSTreeNode<SomeType>*& treePtr)
 {
     SomeType info;
     BSTreeNode<SomeType>* tempPtr = treePtr;
-
-    if (treePtr->leftPtr == NULL)
+    
+    if ((treePtr->leftPtr == NULL) && (treePtr->rightPtr == NULL))
+    {
+        delete tempPtr;
+    }
+    else if (treePtr->leftPtr == NULL)
     {
         treePtr = treePtr->rightPtr;
         delete tempPtr;
