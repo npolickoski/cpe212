@@ -196,7 +196,7 @@ int BSTree<SomeType>::FindLevel(BSTreeNode<SomeType>* treePtr, SomeType item) co
 // Recursive function that traverses the tree looking for item and returns the level where
 // item was found
 {
-    static int itemLvl = 0;                         // final total # of levels
+    static int itemLvl = 1;                         // final total # of levels
 
     if (treePtr == NULL)
     {
