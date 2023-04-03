@@ -110,7 +110,8 @@ void BSTree<SomeType>::DeleteNode(BSTreeNode<SomeType>*& treePtr)
     }
     else                                                            // 2 children
     {
-        BSTreeNode<SomeType>* maxPtr = GetPredecessor(treePtr->leftPtr);
+        BSTreeNode<SomeType>* maxPtr; 
+        maxPtr->data = GetPredecessor(treePtr->leftPtr);
         treePtr->data = maxPtr->data;
         DeleteNode(maxPtr);
     }
