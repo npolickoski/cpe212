@@ -138,9 +138,12 @@ VertexNode* Graph::WhereIs(string v)
 int Graph::WeightIs(string s, string d)
 // Returns weight of edge (s,d).  Throws GraphEdgeNotFound if edge not present.
 {
-    VertexNode* VertSource = WhereIs(s);
-    VertexNode* VertDestin = WhereIs(d);
-    EdgeNode* IterEdge;
+    VertexNode* VertSource = new VertexNode;
+    VertexNode* VertDestin = new VertexNode;
+    EdgeNode* IterEdge = new EdgeNode;
+
+    VertSource = WhereIs(s);
+    VertDestin = WhereIs(d);
     IterEdge->nextPtr = VertSource->edgePtr;
 
     while(IterEdge->destination != VertDestin)
