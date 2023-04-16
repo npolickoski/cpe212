@@ -132,7 +132,7 @@ VertexNode* Graph::WhereIs(string v)
 int Graph::WeightIs(string s, string d)
 // Returns weight of edge (s,d).  Throws GraphEdgeNotFound if edge not present.
 {
-    if (!(IsPresent(s)) || !(IsPresent(s)))
+    if (!(IsPresent(s)) || !(IsPresent(d)))
     {
         throw GraphEdgeNotFound();
     }
