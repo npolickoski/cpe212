@@ -39,7 +39,7 @@ void Graph::AddVertex(string v)
     {
         VertexNode* tempVert = new VertexNode;
 
-        tempVert->vname = v
+        tempVert->vname = v;
         tempVert->mark = false;
         tempVert->edgePtr = NULL;
         tempVert->nextVertex = vertices;
@@ -211,7 +211,7 @@ void Graph::GetToVertices(string V, queue<string>& q)
     VertexNode* TempVert = new VertexNode;
     EdgeNode* TempEdge = new EdgeNode;
 
-    TempVert = WhereIs(v);
+    TempVert = WhereIs(V);
     TempEdge = TempVert->edgePtr;
 
     while (TempEdge != NULL)
@@ -260,7 +260,7 @@ void Graph::DepthFirstSearch(string startVertex, string endVertex, queue<string>
         }
         else
         {
-            if (!IsMarked(TempVert->vanme))
+            if (!IsMarked(TempVert->vname))
             {
                 MarkVertex(TempVert->vname);
                 path.push(TempVert->vname);
