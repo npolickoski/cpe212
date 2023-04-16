@@ -26,7 +26,7 @@ class GraphEdgeNotFound {  };                       // Exception class represent
 
 class GraphVertexNotFound {  };                     // Exception class represents vertex-not-found condition
 
-class GraphFull	{  };                             // Exception class represents graph-full condition
+class GraphFull	{  };                               // Exception class represents graph-full condition
 
 struct VertexNode;                                  // Forward declaration of VertexNode type
 
@@ -37,7 +37,7 @@ struct EdgeNode                                     // Structure representing an
   EdgeNode*     nextPtr;                            // Pointer to next edge
 };
 
-struct VertexNode									          // Structure representing a vertex
+struct VertexNode									                  // Structure representing a vertex
 {
   string        vname;                              // Name of vertex
   bool          mark;                               // Marked flag
@@ -48,7 +48,7 @@ struct VertexNode									          // Structure representing a vertex
 
 class Graph											// Graph ADT using adjacency list representation
 {
- private:		//***** Private class members below *****//
+ private:		   //***** Private class members below *****//
   VertexNode*	vertices;						// Linked list of vertex nodes
 
  public:		   //***** Public members below *****//
@@ -122,7 +122,7 @@ class Graph											// Graph ADT using adjacency list representation
 	void Print()
 	{
 		EdgeNode* eptr;
-        VertexNode* vptr = vertices;
+    VertexNode* vptr = vertices;
 		const int FIELDWIDTH = 6;
 		string STARS = "**********";
 		STARS = STARS + STARS + STARS; 
