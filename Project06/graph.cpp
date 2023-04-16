@@ -145,7 +145,7 @@ int Graph::WeightIs(string s, string d)
     // VertDestin = WhereIs(d);
     //IterEdge = VertSource->edgePtr;
 
-    while(IterEdge->destination != VertDestin)
+    while(IterEdge->destination != NULL)//VertDestin)
     {
         IterEdge = IterEdge->nextPtr;
     }
