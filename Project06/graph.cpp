@@ -137,13 +137,13 @@ int Graph::WeightIs(string s, string d)
         throw GraphEdgeNotFound();
     }
 
-    VertexNode* VertSource;
-    VertexNode* VertDestin;
-    //EdgeNode* IterEdge;
+    VertexNode* VertSource = WhereIs(s);
+    VertexNode* VertDestin = WhereIs(d);
+    EdgeNode* IterEdge = VertSource->edgePtr;
 
-    VertSource = WhereIs(s);
-    VertDestin = WhereIs(d);
-    IterEdge = VertSource->edgePtr;
+    // VertSource = WhereIs(s);
+    // VertDestin = WhereIs(d);
+    //IterEdge = VertSource->edgePtr;
 
     while(IterEdge->destination != VertDestin)
     {
