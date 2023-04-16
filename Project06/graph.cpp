@@ -139,7 +139,7 @@ int Graph::WeightIs(string s, string d)
 
     VertexNode* VertSource;
     VertexNode* VertDestin;
-    EdgeNode* IterEdge;
+    //EdgeNode* IterEdge;
 
     VertSource = WhereIs(s);
     VertDestin = WhereIs(d);
