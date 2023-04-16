@@ -59,34 +59,40 @@ void Graph::AddEdge(string s, string d, int w)
 {
     try
     {
-        VertexNode* VertSource = new VertexNode;
-        VertexNode* VertDestin = new VertexNode;
-        EdgeNode* IterEdge = new EdgeNode;
-
-        IterEdge->weight = w;
-        IterEdge->nextPtr = NULL;
-
-        VertSource = WhereIs(s);
-        VertDestin = WhereIs(d);
-
-        IterEdge->nextPtr = VertSource->edgePtr;
-        VertSource->edgePtr = IterEdge;
-        IterEdge->destination = VertDestin;
-
-        // if (VertSource->edgePtr == NULL)        // #1: no edges in vertex
-        // {
-        //     VertSource->edgePtr = IterEdge;
-        //     IterEdge->nextPtr = NULL;
-        // }
-        // else                                    // #2: edge inserted at end of edge LList
-        // {
-            
-        // }
+        EdgeNode* test = new EdgeNode;
+        delete test;
     }
     catch(std::bad_alloc)
     {
         throw GraphFull();
     }
+
+    VertexNode* VertSource = new VertexNode;
+    VertexNode* VertDestin = new VertexNode;
+    EdgeNode* IterEdge = new EdgeNode;
+
+    VertSource = vertices;
+    VertDestin = vertices;
+
+    IterEdge->weight = w;
+    IterEdge->nextPtr = NULL;
+
+    VertSource = WhereIs(s);
+    VertDestin = WhereIs(d);
+
+    IterEdge->nextPtr = VertSource->edgePtr;
+    VertSource->edgePtr = IterEdge;
+    IterEdge->destination = VertDestin;
+
+    // if (VertSource->edgePtr == NULL)        // #1: no edges in vertex
+    // {
+    //     VertSource->edgePtr = IterEdge;
+    //     IterEdge->nextPtr = NULL;
+    // }
+    // else                                    // #2: edge inserted at end of edge LList
+    // {
+        
+    // }
 }
 
 
@@ -132,22 +138,19 @@ VertexNode* Graph::WhereIs(string v)
 int Graph::WeightIs(string s, string d)
 // Returns weight of edge (s,d).  Throws GraphEdgeNotFound if edge not present.
 {
-    if (!(IsPresent(s)) || !(IsPresent(d)))
-    {
-        throw GraphEdgeNotFound();
-    }
-
     VertexNode* VertSource = WhereIs(s);
     VertexNode* VertDestin = WhereIs(d);
-    EdgeNode* IterEdge = VertSource->edgePtr;
-
-    // VertSource = WhereIs(s);
-    // VertDestin = WhereIs(d);
-    //IterEdge = VertSource->edgePtr;
+    EdgeNode* IterEdge;
+    IterEdge->nextPtr = VertSource->edgePtr;
 
     while(IterEdge->destination != VertDestin)
     {
         IterEdge = IterEdge->nextPtr;
+
+        if ((IterEdge->nextPtr == NULL) && (IterEdge->destination != VertDestin))
+        {
+            throw GraphEdgeNotFound();
+        }
     }
 
     return (IterEdge->weight);
