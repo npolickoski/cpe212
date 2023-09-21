@@ -232,9 +232,9 @@ void Graph::DepthFirstSearch(string startVertex, string endVertex, queue<string>
     VertexNode* TempVert = new VertexNode;
 
     if (!(IsPresent(startVertex)) || !(IsPresent(endVertex)))   // exception handler: if the starting and ending vertex nodes don't exist
-    {                                                       //
-        throw GraphVertexNotFound();                        //
-    }                                                       //
+    {                                                           //
+        throw GraphVertexNotFound();                            //
+    }                                                           //
 
     string vertex;
     string item;
